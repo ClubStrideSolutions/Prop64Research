@@ -1,15 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vallejo Youth Prevention Program - 2018-2023 Pre-Program Baseline Dashboard (Enhanced)</title>
+  <title>Vallejo Prop 64 Comprehensive Baseline Dashboard | 2018-2023 Enhanced Analysis</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body { 
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      background: #f5f7fa;
+      background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
       color: #2c3e50;
       line-height: 1.6;
     }
@@ -69,9 +69,9 @@
     }
     
     .nav-tab.active {
-      background: #3498db;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
-      box-shadow: 0 2px 8px rgba(52,152,219,0.4);
+      box-shadow: 0 2px 8px rgba(102,126,234,0.4);
     }
     
     /* Dashboard Views */
@@ -113,7 +113,7 @@
     
     .hero .subtitle {
       font-size: 1.25rem;
-      opacity: 0.9;
+      opacity: 0.95;
       font-weight: 300;
     }
     
@@ -130,7 +130,7 @@
       color: #2c3e50;
       margin-bottom: 1.5rem;
       font-size: 1.75rem;
-      border-bottom: 3px solid #3498db;
+      border-bottom: 3px solid #667eea;
       padding-bottom: 0.5rem;
     }
     
@@ -139,21 +139,6 @@
       margin-top: 1.5rem;
       margin-bottom: 1rem;
       font-size: 1.35rem;
-    }
-    
-    .section-card p {
-      margin-bottom: 1rem;
-      color: #555;
-    }
-    
-    .section-card ul {
-      margin-left: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    
-    .section-card li {
-      margin-bottom: 0.5rem;
-      color: #555;
     }
     
     /* KPI Grid */
@@ -169,7 +154,7 @@
       border-radius: 12px;
       padding: 1.5rem;
       box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      border-left: 4px solid #3498db;
+      border-left: 4px solid #667eea;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     
@@ -205,6 +190,16 @@
       color: #7f8c8d;
     }
     
+    .kpi-card .trend {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    
+    .trend.increase { color: #e74c3c; }
+    .trend.decrease { color: #27ae60; }
+    .trend.stable { color: #7f8c8d; }
+    
     /* Alert Boxes */
     .alert {
       padding: 1.5rem;
@@ -216,15 +211,6 @@
     .alert h3 {
       margin-bottom: 0.5rem;
       font-size: 1.25rem;
-    }
-    
-    .alert p {
-      margin-bottom: 0.5rem;
-    }
-    
-    .alert ul {
-      margin-left: 1.5rem;
-      margin-top: 0.5rem;
     }
     
     .alert-success {
@@ -263,7 +249,7 @@
     }
     
     th {
-      background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
       padding: 1rem;
       text-align: left;
@@ -287,7 +273,30 @@
       border-bottom: none;
     }
     
-    /* Insight Box */
+    /* Metric Highlights */
+    .metric-highlight {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem 0;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(102,126,234,0.3);
+    }
+    
+    .metric-highlight .big-number {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin: 0.5rem 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .metric-highlight .description {
+      font-size: 1.2rem;
+      opacity: 0.95;
+    }
+    
+    /* Insight Boxes */
     .insight-box {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
@@ -298,6 +307,7 @@
     }
     
     .insight-box h3 {
+      color: white;
       margin-bottom: 1rem;
       font-size: 1.5rem;
     }
@@ -310,56 +320,6 @@
     .insight-box strong {
       font-weight: 700;
       text-decoration: underline;
-    }
-    
-    /* Timeline */
-    .timeline {
-      position: relative;
-      padding-left: 2rem;
-      margin: 2rem 0;
-    }
-    
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 3px;
-      background: linear-gradient(180deg, #3498db, #9b59b6);
-    }
-    
-    .timeline-item {
-      position: relative;
-      margin-bottom: 2rem;
-      padding-left: 2rem;
-    }
-    
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -0.6rem;
-      top: 0.5rem;
-      width: 1rem;
-      height: 1rem;
-      border-radius: 50%;
-      background: #3498db;
-      border: 3px solid white;
-      box-shadow: 0 0 0 3px rgba(52,152,219,0.3);
-    }
-    
-    .timeline-year {
-      font-weight: 700;
-      color: #3498db;
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .timeline-content {
-      background: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
     
     /* Priority Badges */
@@ -389,34 +349,63 @@
       color: white;
     }
     
-    /* Grade Badge */
+    .priority-low {
+      background: #95a5a6;
+      color: white;
+    }
+    
+    /* Grade Badges */
     .grade-badge {
       display: inline-block;
       padding: 0.5rem 1rem;
       border-radius: 8px;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 800;
       margin-right: 0.5rem;
       color: white;
     }
     
-    .grade-f {
-      background: #e74c3c;
+    .grade-f { background: #e74c3c; }
+    .grade-d { background: #e67e22; }
+    .grade-c { background: #f39c12; }
+    .grade-b { background: #3498db; }
+    .grade-a { background: #27ae60; }
+    .grade-a-plus { background: linear-gradient(135deg, #27ae60 0%, #229954 100%); }
+    
+    /* Source Citations */
+    .source-citation {
+      font-size: 0.85rem;
+      color: #6c757d;
+      font-style: italic;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e9ecef;
     }
     
-    .grade-c {
-      background: #f39c12;
+    /* Cross-Section Box */
+    .cross-section {
+      background: linear-gradient(to right, #fff5f5, #fff);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      border: 2px solid #ffc107;
+      box-shadow: 0 2px 8px rgba(255,193,7,0.2);
     }
     
-    .grade-a-plus {
-      background: #27ae60;
+    .cross-section h2 {
+      color: #e67e22;
+      border-bottom-color: #ffc107;
     }
     
-    /* Stars Rating */
-    .stars {
-      color: #f39c12;
-      font-size: 1.5rem;
-      margin: 0.5rem 0;
+    /* Lists */
+    ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    li {
+      margin-bottom: 0.5rem;
+      color: #555;
     }
     
     /* Footer */
@@ -427,63 +416,21 @@
       margin-top: 3rem;
       text-align: center;
       font-size: 0.9rem;
-    }
-    
-    .footer div {
-      margin-bottom: 0.5rem;
+      border-radius: 12px;
     }
     
     .footer .sources {
-      margin-top: 1rem;
-      padding-top: 1rem;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
       border-top: 1px solid rgba(255,255,255,0.2);
       font-size: 0.85rem;
-      opacity: 0.8;
+      opacity: 0.9;
       text-align: left;
       max-width: 1200px;
-      margin: 1rem auto 0;
+      margin: 1.5rem auto 0;
     }
     
-    /* Checklist */
-    .checklist {
-      list-style: none;
-      margin-left: 0;
-    }
-    
-    .checklist li {
-      padding-left: 1.5rem;
-      position: relative;
-      margin-bottom: 0.75rem;
-    }
-    
-    .checklist li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: #27ae60;
-      font-weight: bold;
-    }
-    
-    .crosslist {
-      list-style: none;
-      margin-left: 0;
-    }
-    
-    .crosslist li {
-      padding-left: 1.5rem;
-      position: relative;
-      margin-bottom: 0.75rem;
-    }
-    
-    .crosslist li::before {
-      content: '✗';
-      position: absolute;
-      left: 0;
-      color: #e74c3c;
-      font-weight: bold;
-    }
-    
-    /* Responsive */
+    /* Responsive Design */
     @media (max-width: 768px) {
       .nav-container {
         flex-direction: column;
@@ -507,25 +454,60 @@
       .container {
         padding: 1rem;
       }
+      
+      .metric-highlight .big-number {
+        font-size: 2.5rem;
+      }
     }
     
-    /* Stat Highlights */
-    .stat-highlight {
-      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-      color: white;
-      padding: 1.5rem;
-      border-radius: 12px;
-      margin: 1rem 0;
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-align: center;
-    }
-    
-    .stat-highlight .big-number {
-      font-size: 3rem;
-      font-weight: 800;
-      display: block;
+    /* Quality Stars */
+    .quality-stars {
+      font-size: 1.5rem;
+      color: #f39c12;
       margin: 0.5rem 0;
+    }
+    
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, #667eea, #764ba2);
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      padding-left: 2rem;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -0.6rem;
+      top: 0.5rem;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background: #667eea;
+      border: 3px solid white;
+      box-shadow: 0 0 0 3px rgba(102,126,234,0.3);
+    }
+    
+    .timeline-content {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
   </style>
 </head>
@@ -534,13 +516,16 @@
   <!-- Navigation -->
   <nav class="nav-bar">
     <div class="nav-container">
-      <div class="nav-brand">2018-2023 Pre-Program Baseline Dashboard (Enhanced)</div>
+      <div class="nav-brand">Vallejo Prop 64 Comprehensive Baseline Dashboard</div>
       <div class="nav-tabs">
         <button class="nav-tab active" onclick="showView('overview')">Overview</button>
+        <button class="nav-tab" onclick="showView('demographics')">Demographics</button>
         <button class="nav-tab" onclick="showView('substance')">Substance Use</button>
         <button class="nav-tab" onclick="showView('crime')">Crime & Safety</button>
-        <button class="nav-tab" onclick="showView('economic')">Economics</button>
+        <button class="nav-tab" onclick="showView('youth')">Youth Indicators</button>
+        <button class="nav-tab" onclick="showView('economic')">Economic</button>
         <button class="nav-tab" onclick="showView('health')">Health & Environment</button>
+        <button class="nav-tab" onclick="showView('cross-analysis')">Cross-Analysis</button>
         <button class="nav-tab" onclick="showView('priorities')">Action Priorities</button>
       </div>
     </div>
@@ -551,269 +536,446 @@
     <div class="container">
       
       <div class="hero">
-        <h1>Vallejo Youth Prevention & Opportunity Program</h1>
-        <div class="subtitle">Pre-Program Baseline Assessment: 2018-2023 (ENHANCED)</div>
-        <div class="subtitle" style="margin-top: 0.5rem; font-size: 1rem;">Five Years of Data Before Program Launch (May 2023) + Census Tract Crime Intelligence</div>
+        <h1>Comprehensive Youth Prevention & Opportunity Program Baseline</h1>
+        <div class="subtitle">2018-2023 Pre-Program Analysis | BSCC Prop 64 Grant Cohort 3</div>
+        <div class="subtitle" style="margin-top: 0.5rem; font-size: 1rem;">Five-Year Baseline with Census Tract Intelligence & Cross-Validated Data</div>
       </div>
 
       <div class="alert alert-success">
-        <h3>📊 Overall Baseline Quality: ⭐⭐⭐⭐☆ (4/5) - STRONG (ENHANCED WITH CENSUS TRACT DATA)</h3>
-        <p><strong>Comprehensive data foundation now includes census tract-level crime intelligence.</strong> This enhanced baseline integrates 18 years of crime data with census tract classifications, enabling precise geographic targeting for Prop 64 environmental justice programming.</p>
+        <h3>📊 Overall Baseline Quality: <span class="quality-stars">⭐⭐⭐⭐☆</span> (4/5) - STRONG FOUNDATION</h3>
+        <p><strong>Comprehensive baseline established across all program domains with geographic precision.</strong> This enhanced analysis integrates multiple data streams including census tract crime classifications, enabling targeted intervention in environmental justice communities.</p>
         <ul>
-          <li><strong>18 years of crime data (2007-2024)</strong> - excellent trend analysis capability</li>
-          <li><strong>NEW: Census tract crime grades (A+ through F)</strong> - enables CalEnviroScreen 4.0 correlation</li>
-          <li><strong>NEW: Top 10 safest neighborhoods identified</strong> - ALL in Beat 3 (Southeast census tracts)</li>
-          <li><strong>6 years of CHKS substance use data (2018-2024)</strong> - grade-level baselines by year</li>
-          <li><strong>18 years of health outcomes (2005-2022)</strong> - mortality and disease trends</li>
-          <li><strong>Geographic precision achieved</strong> - can now correlate crime with environmental burden</li>
+          <li>✅ 6 years of CHKS substance use data (2018-2024) - grade-level baselines established</li>
+          <li>✅ 18 years of crime trends with census tract mapping - geographic targeting enabled</li>
+          <li>✅ Demographic and economic indicators documented - structural disadvantage quantified</li>
+          <li>✅ Environmental burden analysis - CalEnviroScreen correlation possible</li>
+          <li>⚠️ Missing: Individual participant baselines and precise census tract crime statistics</li>
         </ul>
       </div>
 
       <div class="section-card">
-        <h2>Baseline Period Snapshot: 2018-2023</h2>
+        <h2>Executive Summary: Youth Crisis Requiring Urgent Intervention</h2>
         
+        <div class="metric-highlight">
+          <div class="description">Vallejo youth face a converging crisis across</div>
+          <div class="big-number">FOUR DOMAINS</div>
+          <div class="description">Economic • Mental Health • Educational • Community Safety</div>
+        </div>
+
         <div class="kpi-grid">
           <div class="kpi-card danger">
-            <div class="label">Youth Substance Use</div>
-            <div class="value">13%</div>
-            <div class="context">Grade 9 AOD use (DOUBLES from Grade 7)</div>
+            <div class="label">Youth Depression</div>
+            <div class="value">42.7%</div>
+            <div class="context">Grade 11 students</div>
+            <div class="trend increase">68% among LGBTQ+ youth</div>
           </div>
           
           <div class="kpi-card danger">
-            <div class="label">Homicide Crisis</div>
+            <div class="label">Youth Employment Loss</div>
+            <div class="value">-33%</div>
+            <div class="context">6,895 → 4,600 jobs</div>
+            <div class="trend increase">2018-2024 collapse</div>
+          </div>
+          
+          <div class="kpi-card danger">
+            <div class="label">Non-Traditional AOD Use</div>
+            <div class="value">28-35%</div>
+            <div class="context">2-3x mainstream students</div>
+            <div class="trend increase">Crisis-level rates</div>
+          </div>
+          
+          <div class="kpi-card danger">
+            <div class="label">Homicide Increase</div>
             <div class="value">+137%</div>
-            <div class="context">2018 (8) → 2023 (19 murders)</div>
-          </div>
-          
-          <div class="kpi-card warning">
-            <div class="label">Youth Disconnection</div>
-            <div class="value">7.9%</div>
-            <div class="context">Not in school, not working (ages 16-19)</div>
-          </div>
-          
-          <div class="kpi-card danger">
-            <div class="label">Youth Poverty</div>
-            <div class="value">26.3%</div>
-            <div class="context">Males ages 18-24 below poverty line</div>
-          </div>
-          
-          <div class="kpi-card success">
-            <div class="label">Property Crime Trend</div>
-            <div class="value">-16%</div>
-            <div class="context">Declining 2018-2023</div>
+            <div class="context">8 → 19 (2018-2023)</div>
+            <div class="trend increase">90%+ firearms</div>
           </div>
           
           <div class="kpi-card warning">
             <div class="label">Chronic Absenteeism</div>
             <div class="value">41%</div>
-            <div class="context">Bethel HS 2022-23 (+70% increase)</div>
+            <div class="context">Bethel HS (2022-23)</div>
+            <div class="trend increase">+70% from baseline</div>
+          </div>
+          
+          <div class="kpi-card warning">
+            <div class="label">Youth Disconnection</div>
+            <div class="value">7.9%</div>
+            <div class="context">Not in school/work</div>
+            <div class="trend increase">+11% vs. county</div>
           </div>
         </div>
 
-        <div class="alert alert-info">
-          <strong>Program Launch Context (May 2023):</strong> The program launched during an established downward trend in property crime (-49% from 2013 peak) and improving violent crime rates (-25% from 2020 peak). However, homicides surged +137% and youth mental health crises accelerated during the baseline period, justifying urgent prevention intervention.
-        </div>
-      </div>
-
-      <div class="section-card">
-        <h2>NEW: Geographic Crime Intelligence (Census Tract-Aligned)</h2>
-        
-        <div class="alert alert-success">
-          <h3>🎯 Critical Enhancement: Census Tract Crime Classifications Achieved</h3>
-          <p><strong>Crime data now mapped to census tract geography</strong>, resolving the previous incompatibility between police beat structure (8 beats) and census tract framework (29 tracts) needed for CalEnviroScreen 4.0 correlation.</p>
-        </div>
-
-        <h3>Crime Grade Classifications by Census Tract Zone</h3>
+        <h3>Geographic Intelligence: Census Tract Crime Classifications</h3>
         
         <div class="kpi-grid">
           <div class="kpi-card danger">
             <div class="label">Grade F Census Tracts</div>
-            <div class="value">Grade F</div>
-            <div class="context">Central, Southwest, Northwest zones - HIGHEST priority</div>
+            <div class="value">1 in 18</div>
+            <div class="context">Victimization risk</div>
+            <div class="trend">Central, Southwest, Northwest zones</div>
           </div>
           
           <div class="kpi-card warning">
             <div class="label">Grade C Census Tracts</div>
-            <div class="value">Grade C</div>
-            <div class="context">Northern, East-Central zones - MODERATE risk</div>
+            <div class="value">1 in 25</div>
+            <div class="context">Moderate risk</div>
+            <div class="trend">Northern, East-Central zones</div>
           </div>
           
           <div class="kpi-card success">
             <div class="label">Grade A+ Census Tracts</div>
-            <div class="value">Grade A+</div>
-            <div class="context">Eastern, Southeast, Northeast zones - SAFEST</div>
+            <div class="value">1 in 37</div>
+            <div class="context">Safest zones</div>
+            <div class="trend">ALL in Beat 3 (Southeast)</div>
           </div>
         </div>
 
-        <h3>Top 10 Safest Neighborhoods (ALL in Beat 3 - Southeast Census Tracts)</h3>
+        <div class="alert alert-info">
+          <strong>Critical Finding:</strong> ALL 10 safest neighborhoods cluster in southeast census tracts (Beat 3), while Grade F zones concentrate in Central/Southwest/Northwest census tracts, creating extreme geographic inequality requiring targeted intervention.
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h2>Key Baseline Findings by Program Goal</h2>
+        
+        <h3>Goal 1: Youth Employment & Opportunity</h3>
+        <ul>
+          <li><strong>33% decline</strong> in youth employment opportunities (6,895 → 4,600 jobs)</li>
+          <li><strong>26.3% poverty rate</strong> among males 18-24 (highest youth rate)</li>
+          <li><strong>7.9% disconnection rate</strong> (not in school, not working)</li>
+          <li><strong>28.2% worse outcomes</strong> than county average across 5 indicators</li>
+        </ul>
+
+        <h3>Goal 2: Substance Use Prevention</h3>
+        <ul>
+          <li><strong>Grade 8-9 transition</strong> identified as critical window (use doubles)</li>
+          <li><strong>10% current use rate</strong> among Grade 9 students (down from 14%)</li>
+          <li><strong>28-35% use rate</strong> among Non-Traditional students (crisis level)</li>
+          <li><strong>Better than state average</strong> across all grades (4-5pp lower)</li>
+        </ul>
+
+        <h3>Goal 3: Public Safety Enhancement</h3>
+        <ul>
+          <li><strong>137% increase</strong> in homicides (8 → 19) during baseline</li>
+          <li><strong>Geographic concentration</strong> in Grade F census tracts</li>
+          <li><strong>90%+ firearm involvement</strong> in homicides (up from 50%)</li>
+          <li><strong>99.5% municipal failure rate</strong> on community issues (SeeClickFix)</li>
+        </ul>
+      </div>
+
+      <div class="insight-box">
+        <h3>🎯 Bottom Line: Strong Foundation with Clear Enhancement Path</h3>
+        <p>
+          The baseline establishes <strong>comprehensive documentation of youth crisis conditions</strong> across all program domains. Geographic intelligence through census tract crime classifications enables precise targeting of Grade F zones (South Vallejo, Crest Area) while using Grade A+ zones as control groups.
+        </p>
+        <p>
+          <strong>Critical patterns identified:</strong> (1) Grade 8-9 transition as evidence-based intervention window, (2) Non-Traditional students facing 2-3x higher risk requiring specialized protocols, (3) Geographic concentration of risk in specific census tracts enabling targeted intervention, (4) Mental health crisis underlying substance use patterns.
+        </p>
+        <p>
+          <strong>To achieve 5/5 quality:</strong> Submit PRA request for precise census tract crime data, implement pre/post assessments, establish participant tracking system with census tract coding. Timeline: 6 months to rigorous evaluation capability.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEMOGRAPHICS VIEW -->
+  <div id="demographics-view" class="dashboard-view">
+    <div class="container">
+      
+      <div class="hero">
+        <h1>Demographics & Community Context</h1>
+        <div class="subtitle">Population Dynamics and Socioeconomic Baseline (2018-2023)</div>
+      </div>
+
+      <div class="section-card">
+        <h2>Population Trends</h2>
+        
         <table>
           <thead>
             <tr>
-              <th>Rank</th>
-              <th>Neighborhood</th>
-              <th>Location</th>
-              <th>Census Tract Zone</th>
-              <th>Grade</th>
+              <th>Year</th>
+              <th>Total Population</th>
+              <th>Youth Under 18</th>
+              <th>% Youth</th>
+              <th>Median Age</th>
+              <th>Key Context</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="background: #d5f4e6;">
-              <td>1</td>
-              <td><strong>Glen Cove</strong></td>
-              <td>Far Southeast</td>
-              <td>Southeast tracts</td>
-              <td><span class="grade-badge grade-a-plus">A+</span></td>
+            <tr>
+              <td>2018*</td>
+              <td>~121,000</td>
+              <td>~21,800</td>
+              <td>18.0%</td>
+              <td>38.9</td>
+              <td>Baseline year</td>
             </tr>
             <tr>
-              <td>2</td>
-              <td><strong>Heather Ridge North</strong></td>
-              <td>East Vallejo</td>
-              <td>Eastern tracts</td>
-              <td><span class="grade-badge grade-a-plus">A+</span></td>
-            </tr>
-            <tr style="background: #d5f4e6;">
-              <td>3-5</td>
-              <td><strong>Madigan neighborhoods</strong></td>
-              <td>East Vallejo</td>
-              <td>Eastern tracts</td>
-              <td><span class="grade-badge grade-a-plus">A+</span></td>
+              <td>2020</td>
+              <td>121,275</td>
+              <td>~21,830</td>
+              <td>18.0%</td>
+              <td>39.1</td>
+              <td>COVID impact</td>
             </tr>
             <tr>
-              <td>6</td>
-              <td><strong>Hunter Ranch</strong></td>
-              <td>Northeast</td>
-              <td>Northeast tracts</td>
-              <td><span class="grade-badge grade-a-plus">A+</span></td>
-            </tr>
-            <tr style="background: #d5f4e6;">
-              <td>7</td>
-              <td><strong>Glen Cove West</strong></td>
-              <td>Southeast</td>
-              <td>Southeast tracts</td>
-              <td><span class="grade-badge grade-a-plus">A+</span></td>
+              <td>2021</td>
+              <td>124,777</td>
+              <td>~22,460</td>
+              <td>18.0%</td>
+              <td>39.5</td>
+              <td>Growth spike</td>
             </tr>
             <tr>
-              <td>8</td>
-              <td><strong>Harry Floyd Terrace</strong></td>
-              <td>Northeast</td>
-              <td>Northeast tracts</td>
-              <td><span class="grade-badge grade-a-plus">A+</span></td>
-            </tr>
-            <tr style="background: #d5f4e6;">
-              <td>9</td>
-              <td><strong>Somerset Highlands</strong></td>
-              <td>Southeast</td>
-              <td>Southeast tracts</td>
-              <td><span class="grade-badge grade-a-plus">A+</span></td>
+              <td>2022</td>
+              <td>125,132</td>
+              <td>~22,524</td>
+              <td>18.0%</td>
+              <td>39.8</td>
+              <td>Peak population</td>
             </tr>
             <tr>
-              <td>10</td>
-              <td><strong>Vista East</strong></td>
-              <td>East Vallejo</td>
-              <td>Eastern tracts</td>
-              <td><span class="grade-badge grade-a-plus">A+</span></td>
+              <td>2023</td>
+              <td>124,637</td>
+              <td>~22,000</td>
+              <td>17.6%</td>
+              <td>40.0</td>
+              <td>Decline begins</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="source-citation">*2018-2019 specific data pending CA DOF E-4 Historical Report integration. Source: U.S. Census, DataUSA</p>
+      </div>
+
+      <div class="section-card">
+        <h2>Racial/Ethnic Composition Shift (2020-2023)</h2>
+        
+        <div class="kpi-grid">
+          <div class="kpi-card info">
+            <div class="label">Hispanic/Latino</div>
+            <div class="value">30.0%</div>
+            <div class="context">37,400 residents</div>
+            <div class="trend increase">↑4.5% (now largest group)</div>
+          </div>
+          
+          <div class="kpi-card info">
+            <div class="label">Asian (Non-Hispanic)</div>
+            <div class="value">22.4%</div>
+            <div class="context">27,900 residents</div>
+            <div class="trend decrease">↓3.1% decline</div>
+          </div>
+          
+          <div class="kpi-card info">
+            <div class="label">White (Non-Hispanic)</div>
+            <div class="value">21.6%</div>
+            <div class="context">26,900 residents</div>
+            <div class="trend decrease">↓4.6% decline</div>
+          </div>
+          
+          <div class="kpi-card info">
+            <div class="label">Black/African American</div>
+            <div class="value">17.0%</div>
+            <div class="context">21,200 residents</div>
+            <div class="trend decrease">↓1.9% decline</div>
+          </div>
+          
+          <div class="kpi-card info">
+            <div class="label">Two+ Races</div>
+            <div class="value">6.06%</div>
+            <div class="context">7,600 residents</div>
+            <div class="trend">New category</div>
+          </div>
+          
+          <div class="kpi-card info">
+            <div class="label">Foreign-Born</div>
+            <div class="value">27.1%</div>
+            <div class="context">33,800 residents</div>
+            <div class="trend increase">↑0.9pp from 2020</div>
+          </div>
+        </div>
+
+        <div class="alert alert-warning">
+          <strong>Program Implication:</strong> Hispanic/Latino population growth to 30% (largest group) requires expanded Spanish-language services and culturally responsive programming. The fastest-growing population has the lowest educational attainment (13.9% bachelor's degree vs. 41.8% Asian).
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h2>Economic Indicators</h2>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>2020</th>
+              <th>2023</th>
+              <th>Change</th>
+              <th>vs. County</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Median Household Income</strong></td>
+              <td>$73,869</td>
+              <td>$89,496</td>
+              <td style="color: #27ae60;">+21.2%</td>
+              <td style="color: #e74c3c;">-10.5% below</td>
+            </tr>
+            <tr>
+              <td><strong>Overall Poverty Rate</strong></td>
+              <td>15.4%</td>
+              <td>12.3%</td>
+              <td style="color: #27ae60;">-3.1pp</td>
+              <td style="color: #e74c3c;">+2.3pp higher</td>
+            </tr>
+            <tr>
+              <td><strong>Child Poverty Rate</strong></td>
+              <td>22.6%</td>
+              <td>17-18%</td>
+              <td style="color: #27ae60;">-4.6pp</td>
+              <td style="color: #e74c3c;">+39.1% higher</td>
+            </tr>
+            <tr>
+              <td><strong>Deep Poverty (<50% FPL)</strong></td>
+              <td>N/A</td>
+              <td>5.4%</td>
+              <td>--</td>
+              <td style="color: #e74c3c;">+51% higher</td>
             </tr>
           </tbody>
         </table>
 
-        <div class="stat-highlight" style="background: linear-gradient(135deg, #27ae60 0%, #229954 100%);">
-          <div>ALL 10 safest neighborhoods are in</div>
-          <div class="big-number">BEAT 3</div>
-          <div>(Southeast Vallejo census tracts)</div>
+        <div class="metric-highlight" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
+          <div class="description">Vallejo families earn</div>
+          <div class="big-number">$13,557 LESS</div>
+          <div class="description">than Solano County average (15.6% income gap)</div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h2>Youth Poverty by Demographics</h2>
+        
+        <div class="kpi-grid">
+          <div class="kpi-card danger">
+            <div class="label">Females 12-14</div>
+            <div class="value">28.7%</div>
+            <div class="context">Highest rate</div>
+          </div>
+          
+          <div class="kpi-card danger">
+            <div class="label">Males 18-24</div>
+            <div class="value">26.3%</div>
+            <div class="context">Young adult crisis</div>
+          </div>
+          
+          <div class="kpi-card danger">
+            <div class="label">Males 15-17</div>
+            <div class="value">21.6%</div>
+            <div class="context">High school age</div>
+          </div>
+          
+          <div class="kpi-card danger">
+            <div class="label">Females 18-24</div>
+            <div class="value">20.4%</div>
+            <div class="context">1 in 5 in poverty</div>
+          </div>
         </div>
 
-        <h3>Grade F Priority Target Zones (Prop 64 Focus Areas)</h3>
+        <h3>Poverty by Race/Ethnicity (2023)</h3>
         <table>
           <thead>
             <tr>
-              <th>Census Tract Zone</th>
-              <th>Key Neighborhoods</th>
-              <th>Dominant Crime Types</th>
-              <th>Priority Level</th>
+              <th>Race/Ethnicity</th>
+              <th>Poverty Rate</th>
+              <th>Number in Poverty</th>
+              <th>Disparity</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="background: #f8d7da;">
-              <td><strong>Central City Census Tracts (Beat 7)</strong></td>
-              <td>Downtown, Old City Vallejo</td>
-              <td>All crime types, densest clustering citywide</td>
-              <td><span class="priority-badge priority-critical">CRITICAL</span></td>
+            <tr>
+              <td>Black</td>
+              <td>20.5%</td>
+              <td>4,112</td>
+              <td style="color: #e74c3c;">3.7x Asian rate</td>
             </tr>
             <tr>
-              <td><strong>Southwest Census Tracts (Beats 5, 6)</strong></td>
-              <td>Greater South Vallejo, Mare Island</td>
-              <td>Violent crimes, robberies, gang activity, homicides</td>
-              <td><span class="priority-badge priority-critical">CRITICAL</span></td>
+              <td>White</td>
+              <td>15.0%</td>
+              <td>3,745</td>
+              <td style="color: #e74c3c;">2.7x Asian rate</td>
             </tr>
-            <tr style="background: #f8d7da;">
-              <td><strong>Northwest Census Tracts (Beat 1)</strong></td>
-              <td>Crest Area</td>
-              <td>Larcenies, stolen vehicles, property crimes</td>
-              <td><span class="priority-badge priority-critical">CRITICAL</span></td>
+            <tr>
+              <td>Two+ Races</td>
+              <td>13.3%</td>
+              <td>2,776</td>
+              <td style="color: #f39c12;">2.4x Asian rate</td>
+            </tr>
+            <tr>
+              <td>Hispanic</td>
+              <td>12.4%</td>
+              <td>4,753</td>
+              <td style="color: #f39c12;">2.2x Asian rate</td>
+            </tr>
+            <tr>
+              <td>Asian</td>
+              <td>5.6%</td>
+              <td>1,708</td>
+              <td>Lowest rate</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="source-citation">Source: City-Data.com, American Community Survey 2023</p>
+      </div>
+
+      <div class="section-card">
+        <h2>Housing and Stability</h2>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>2020</th>
+              <th>2023</th>
+              <th>Change</th>
+              <th>Implication</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Median Property Value</td>
+              <td>$404,600</td>
+              <td>$557,500</td>
+              <td style="color: #e74c3c;">+37.8%</td>
+              <td>Affordability crisis</td>
+            </tr>
+            <tr>
+              <td>Homeownership Rate</td>
+              <td>57.1%</td>
+              <td>58.9%</td>
+              <td style="color: #27ae60;">+1.8pp</td>
+              <td>Slight improvement</td>
+            </tr>
+            <tr>
+              <td>Rent-to-Income Ratio</td>
+              <td>N/A</td>
+              <td>39.5%</td>
+              <td>--</td>
+              <td>9.5pp above threshold</td>
+            </tr>
+            <tr>
+              <td>Poor Residents Who Rent</td>
+              <td>N/A</td>
+              <td>62.3%</td>
+              <td>--</td>
+              <td>Housing instability</td>
             </tr>
           </tbody>
         </table>
 
         <div class="alert alert-danger">
-          <strong>Prop 64 Target Validation:</strong> Greater South Vallejo (southwest census tracts) and Crest Area (northwest census tracts) are CONFIRMED as Grade F high-crime zones requiring priority youth prevention and environmental beautification interventions. These should be cross-referenced with CalEnviroScreen 4.0 scores to identify dual high-crime + high-pollution burden census tracts.
+          <strong>Affordability Gap:</strong> Housing costs grew 1.75x faster than incomes (37.8% vs. 21.2%), creating severe pressure on families. Youth in renter households face compounded risk from residential instability disrupting school continuity and social networks.
         </div>
       </div>
-
-      <div class="section-card">
-        <h2>Baseline Quality by Program Goal</h2>
-        
-        <div class="kpi-grid">
-          <div class="kpi-card warning">
-            <div class="label">Goal 1: Youth Employment</div>
-            <div class="value">⭐⭐⭐☆☆</div>
-            <div class="context">MODERATE - Strong context, need participant baselines</div>
-          </div>
-          
-          <div class="kpi-card success">
-            <div class="label">Goal 2: Substance Prevention</div>
-            <div class="value">⭐⭐⭐⭐☆</div>
-            <div class="context">STRONG - 6 years CHKS data by grade</div>
-          </div>
-          
-          <div class="kpi-card success">
-            <div class="label">Goal 3: Public Safety (ENHANCED)</div>
-            <div class="value">⭐⭐⭐⭐☆</div>
-            <div class="context">STRONG - 18 years + census tract crime grades</div>
-          </div>
-        </div>
-
-        <h3>What We Can Measure (With Enhanced Baseline)</h3>
-        <ul class="checklist">
-          <li><strong>City-wide crime trends</strong> comparing 2018-2023 to program period</li>
-          <li><strong>NEW: Census tract crime grades</strong> for CalEnviroScreen 4.0 correlation</li>
-          <li><strong>NEW: Geographic crime patterns</strong> by census tract zone</li>
-          <li><strong>Substance use rates by grade</strong> from annual CHKS surveys</li>
-          <li><strong>Education outcomes</strong> (graduation, attendance, achievement)</li>
-          <li><strong>Economic indicators</strong> (unemployment, poverty, disconnection)</li>
-        </ul>
-
-        <h3>Critical Data Gaps Remaining</h3>
-        <ul class="crosslist">
-          <li><strong>Precise census tract crime data</strong> - need PRA request to Vallejo PD for exact tract-level statistics</li>
-          <li><strong>Participant pre/post assessments</strong> - cannot measure individual knowledge/behavior change</li>
-          <li><strong>Participant outcome tracking</strong> - cannot document long-term trajectories</li>
-          <li><strong>Environmental baseline photos</strong> - cannot demonstrate community improvements</li>
-        </ul>
-      </div>
-
-      <div class="insight-box">
-        <h3>🎯 Bottom Line: Enhanced Foundation with Census Tract Intelligence</h3>
-        <p>
-          The enhanced baseline now includes <strong>census tract crime grade classifications</strong>, resolving the geographic data structure mismatch. We can now correlate crime patterns with CalEnviroScreen 4.0 environmental burden scores to identify dual high-crime + high-pollution census tracts for targeted Prop 64 programming.
-        </p>
-        <p>
-          <strong>Three critical findings emerge:</strong> (1) ALL 10 safest neighborhoods cluster in southeast census tracts (Beat 3), creating a clear geographic safety corridor; (2) Grade F census tract zones (Central, Southwest, Northwest) confirmed as priority areas matching Prop 64 targets; and (3) Clear east-west geographic inequality, with eastern residential census tracts achieving Grade A+ while central/southwest zones face Grade F crisis.
-        </p>
-        <p>
-          <strong>To achieve 5/5 baseline quality:</strong> Submit PRA request to Vallejo PD for precise census tract-level crime data (CRITICAL), implement pre/post workshop assessments (CRITICAL), and establish participant tracking system (HIGH PRIORITY). With these enhancements, can demonstrate measurable impact in target census tracts.
-        </p>
-      </div>
-
     </div>
   </div>
 
@@ -822,27 +984,25 @@
     <div class="container">
       
       <div class="hero">
-        <h1>Substance Use Baseline (2018-2023)</h1>
-        <div class="subtitle">California Healthy Kids Survey (CHKS) Trends</div>
+        <h1>Substance Use Prevention Baseline</h1>
+        <div class="subtitle">California Healthy Kids Survey Trends (2018-2024)</div>
       </div>
 
       <div class="alert alert-success">
-        <h3>✅ BASELINE STRENGTH: ⭐⭐⭐⭐☆ (4/5) - STRONG</h3>
-        <p><strong>Six years of CHKS data (2018-19 through 2023-24)</strong> establish clear grade-level baselines and identify critical intervention points. Vallejo performs BETTER than California state average across all grades, but local rates still represent significant public health concern.</p>
+        <h3>✅ BASELINE STRENGTH: <span class="quality-stars">⭐⭐⭐⭐☆</span> (4/5) - STRONG</h3>
+        <p><strong>Six years of CHKS data establish clear grade-level baselines.</strong> Vallejo performs BETTER than California state average across all grades, though rates remain concerning. The Grade 8-9 transition consistently shows doubling of use rates, identifying the critical intervention window.</p>
       </div>
 
       <div class="section-card">
-        <h2>The Grade 9 Transition Crisis</h2>
+        <h2>Critical Pattern: The Grade 8-9 Transition Crisis</h2>
         
-        <div class="stat-highlight">
-          <div>Substance use consistently</div>
+        <div class="metric-highlight">
+          <div class="description">Substance use consistently</div>
           <div class="big-number">DOUBLES</div>
-          <div>from Grade 7 (7%) to Grade 9 (13%)</div>
+          <div class="description">from Grade 7 to Grade 9 across all survey years</div>
         </div>
 
-        <p><strong>This pattern is persistent across all survey years (2018-2023)</strong>, identifying Grade 9 as the <strong>evidence-based critical intervention point</strong> for prevention programming.</p>
-
-        <h3>Overall Substance Use Trends (Any Alcohol or Drug - Past 30 Days)</h3>
+        <h3>Any Alcohol or Drug Use - Past 30 Days</h3>
         <table>
           <thead>
             <tr>
@@ -855,11 +1015,11 @@
           </thead>
           <tbody>
             <tr style="background: #fff3cd;">
-              <td><strong>2018-19 (Baseline)</strong></td>
-              <td><strong>11%</strong></td>
-              <td><strong>14%</strong></td>
-              <td><strong>24%</strong></td>
-              <td><strong>35%</strong></td>
+              <td><strong>2018-19 Baseline</strong></td>
+              <td>11%</td>
+              <td>14%</td>
+              <td>24%</td>
+              <td>35%</td>
             </tr>
             <tr>
               <td>2019-20</td>
@@ -882,117 +1042,67 @@
               <td>19%</td>
               <td>32%</td>
             </tr>
+            <tr>
+              <td>2022-23</td>
+              <td>8%</td>
+              <td>13%</td>
+              <td>26%</td>
+              <td>28%</td>
+            </tr>
             <tr style="background: #d5f4e6;">
-              <td><strong>2022-23 (Pre-Launch)</strong></td>
-              <td><strong>8%</strong></td>
-              <td><strong>13%</strong></td>
-              <td><strong>26%</strong></td>
-              <td><strong>28%</strong></td>
+              <td><strong>2023-24</strong></td>
+              <td><strong>6%</strong></td>
+              <td><strong>10%</strong></td>
+              <td><strong>24%</strong></td>
+              <td>N/A</td>
             </tr>
           </tbody>
         </table>
-        <p style="font-size: 0.9rem; color: #7f8c8d;">*Limited data due to COVID-19 pandemic</p>
-
-        <div class="alert alert-info">
-          <strong>Key Observations:</strong>
-          <ul>
-            <li>Grade 7 shows relatively stable low rates (7-11%)</li>
-            <li>Grade 9 maintains consistent 13-14% (the transition point)</li>
-            <li>Grade 11 fluctuates between 19-26%</li>
-            <li>Non-Traditional students face crisis-level rates (28-35%)</li>
-          </ul>
-        </div>
+        <p class="source-citation">*Limited COVID-19 pandemic data. Source: CHKS Secondary Student Analysis</p>
       </div>
 
       <div class="section-card">
-        <h2>Marijuana Use Baseline (Past 30 Days)</h2>
+        <h2>Marijuana Use Trends</h2>
         
-        <table>
-          <thead>
-            <tr>
-              <th>Academic Year</th>
-              <th>Grade 7</th>
-              <th>Grade 9</th>
-              <th>Grade 11</th>
-              <th>Non-Traditional</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="background: #fff3cd;">
-              <td><strong>2018-19 (Baseline)</strong></td>
-              <td><strong>5%</strong></td>
-              <td><strong>10%</strong></td>
-              <td><strong>19%</strong></td>
-              <td><strong>31%</strong></td>
-            </tr>
-            <tr>
-              <td>2019-20</td>
-              <td>3%</td>
-              <td>9%</td>
-              <td>15%</td>
-              <td>30%</td>
-            </tr>
-            <tr>
-              <td>2020-21</td>
-              <td>1%</td>
-              <td>--</td>
-              <td>--</td>
-              <td>--</td>
-            </tr>
-            <tr>
-              <td>2021-22</td>
-              <td>4%</td>
-              <td>8%</td>
-              <td>12%</td>
-              <td>32%</td>
-            </tr>
-            <tr style="background: #d5f4e6;">
-              <td><strong>2022-23 (Pre-Launch)</strong></td>
-              <td><strong>1%</strong></td>
-              <td><strong>9%</strong></td>
-              <td><strong>18%</strong></td>
-              <td><strong>25%</strong></td>
-            </tr>
-          </tbody>
-        </table>
-
         <div class="kpi-grid">
           <div class="kpi-card success">
-            <div class="label">Grade 7 Trend</div>
-            <div class="value">5% → 1%</div>
-            <div class="context">80% improvement (2018-19 to 2022-23)</div>
+            <div class="label">Grade 7 (2023-24)</div>
+            <div class="value">3%</div>
+            <div class="context">Down from 5% (2018)</div>
+            <div class="trend decrease">-40% improvement</div>
+          </div>
+          
+          <div class="kpi-card success">
+            <div class="label">Grade 9 (2023-24)</div>
+            <div class="value">6%</div>
+            <div class="context">Down from 10% (2018)</div>
+            <div class="trend decrease">-40% improvement</div>
           </div>
           
           <div class="kpi-card warning">
-            <div class="label">Grade 9 (Critical Point)</div>
-            <div class="value">8-10%</div>
-            <div class="context">Consistent range, doubles from Grade 7</div>
-          </div>
-          
-          <div class="kpi-card warning">
-            <div class="label">Grade 11 Volatility</div>
-            <div class="value">12-19%</div>
-            <div class="context">Peaked 19% (2018), improved to 12% (2021), returned to 18% (2022)</div>
+            <div class="label">Grade 11 (2022-23)</div>
+            <div class="value">18%</div>
+            <div class="context">Down from 19% (2018)</div>
+            <div class="trend decrease">-5% improvement</div>
           </div>
           
           <div class="kpi-card danger">
-            <div class="label">Non-Traditional Crisis</div>
-            <div class="value">25-32%</div>
-            <div class="context">2-3x higher than Grade 11 students</div>
+            <div class="label">Non-Traditional</div>
+            <div class="value">19%</div>
+            <div class="context">Down from 31% (2018)</div>
+            <div class="trend decrease">-39% but still crisis</div>
           </div>
         </div>
-      </div>
 
-      <div class="section-card">
-        <h2>Vallejo vs. California State Average</h2>
-        
+        <h3>Comparison to California State Averages</h3>
         <table>
           <thead>
             <tr>
               <th>Grade Level</th>
-              <th>Vallejo Baseline</th>
-              <th>CA State</th>
+              <th>Vallejo</th>
+              <th>California</th>
               <th>Difference</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -1000,145 +1110,112 @@
               <td>Grade 7</td>
               <td>4%</td>
               <td>4%</td>
-              <td style="background: #d5f4e6; font-weight: bold;">Same</td>
+              <td>Same</td>
+              <td style="color: #3498db;">Equal to state</td>
             </tr>
             <tr>
               <td>Grade 9</td>
               <td>8%</td>
               <td>12%</td>
-              <td style="background: #d5f4e6; font-weight: bold;">-4% (Better)</td>
+              <td>-4pp</td>
+              <td style="color: #27ae60;">Better than state</td>
             </tr>
             <tr>
               <td>Grade 11</td>
               <td>12%</td>
               <td>17%</td>
-              <td style="background: #d5f4e6; font-weight: bold;">-5% (Better)</td>
+              <td>-5pp</td>
+              <td style="color: #27ae60;">Better than state</td>
             </tr>
           </tbody>
         </table>
-
-        <div class="alert alert-success">
-          <strong>Significant Finding:</strong> Vallejo performs BETTER than California state average across all grade levels, suggesting existing local prevention efforts have had positive impact. However, local rates still represent significant public health concern requiring continued intervention.
-        </div>
       </div>
 
       <div class="section-card">
         <h2>Non-Traditional Student Crisis</h2>
         
-        <div class="stat-highlight" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
-          <div>Non-Traditional students face</div>
-          <div class="big-number">2.7x</div>
-          <div>HIGHER marijuana use than Grade 11 students</div>
+        <div class="metric-highlight" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
+          <div class="description">Non-Traditional students face</div>
+          <div class="big-number">2-3x HIGHER</div>
+          <div class="description">substance use rates than mainstream students</div>
         </div>
 
-        <h3>Frequency of Marijuana Use (2019-20 Detailed Analysis)</h3>
-        
+        <h3>Crisis Indicators</h3>
         <div class="kpi-grid">
-          <div class="kpi-card warning">
-            <div class="label">Grade 11: Near-Daily Use</div>
-            <div class="value">3%</div>
-            <div class="context">Used 20-30 days per month</div>
+          <div class="kpi-card danger">
+            <div class="label">AOD Use Rate</div>
+            <div class="value">28-35%</div>
+            <div class="context">vs. 10-24% mainstream</div>
           </div>
           
           <div class="kpi-card danger">
-            <div class="label">Non-Traditional: Near-Daily Use</div>
+            <div class="label">Heavy Drug Use</div>
+            <div class="value">22%</div>
+            <div class="context">3+ days/month</div>
+          </div>
+          
+          <div class="kpi-card danger">
+            <div class="label">Near-Daily Marijuana</div>
             <div class="value">9%</div>
-            <div class="context">Used 20-30 days per month (3x higher)</div>
+            <div class="context">20-30 days/month</div>
+          </div>
+          
+          <div class="kpi-card danger">
+            <div class="label">On-Campus Use</div>
+            <div class="value">12%</div>
+            <div class="context">Safety concern</div>
           </div>
         </div>
 
-        <p><strong>Critical Finding:</strong> Non-Traditional students show 3x higher rate of near-daily use (9% vs 3%), indicating addiction-level patterns requiring immediate specialized intervention.</p>
-
         <div class="alert alert-danger">
-          <h3>Non-Traditional Student Risk Profile</h3>
-          <ul>
-            <li><strong>32% marijuana use rate</strong> (vs. 12% Grade 11 in 2021-22)</li>
-            <li><strong>9% near-daily use</strong> (vs. 3% Grade 11)</li>
-            <li><strong>Higher trauma exposure</strong> and academic disconnection</li>
-            <li><strong>Limited family support structures</strong></li>
-            <li><strong>Multiple risk factors</strong> requiring wraparound services</li>
-          </ul>
-          <p style="margin-top: 1rem;"><strong>Recommendation:</strong> Specialized intervention protocols, trauma-informed care approach, intensive case management, and mental health integration are urgently needed for this population.</p>
+          <strong>Immediate Intervention Required:</strong> Non-Traditional students show addiction-level patterns with 9% near-daily use (3x Grade 11 rate). Requires specialized trauma-informed protocols, intensive case management, and mental health integration.
         </div>
       </div>
 
       <div class="section-card">
-        <h2>Other Substance Use Baselines</h2>
+        <h2>Other Substances</h2>
         
-        <h3>Alcohol Use (Past 30 Days, 2022-23)</h3>
-        <div class="kpi-grid">
-          <div class="kpi-card info">
-            <div class="label">Grade 7</div>
-            <div class="value">5%</div>
-            <div class="context">Consistently low 3-5%</div>
-          </div>
-          
-          <div class="kpi-card info">
-            <div class="label">Grade 9</div>
-            <div class="value">7%</div>
-            <div class="context">Stable 6-8% range</div>
-          </div>
-          
-          <div class="kpi-card warning">
-            <div class="label">Grade 11</div>
-            <div class="value">14%</div>
-            <div class="context">Higher than marijuana</div>
-          </div>
-          
-          <div class="kpi-card warning">
-            <div class="label">Non-Traditional</div>
-            <div class="value">7-22%</div>
-            <div class="context">High variability</div>
-          </div>
-        </div>
+        <h3>Binge Drinking Trends (5+ drinks in a row)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Grade 7</th>
+              <th>Grade 9</th>
+              <th>Grade 11</th>
+              <th>Non-Traditional</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2018-19</td>
+              <td>1%</td>
+              <td>3%</td>
+              <td>5%</td>
+              <td>11%</td>
+            </tr>
+            <tr>
+              <td>2022-23</td>
+              <td>5%</td>
+              <td>4%</td>
+              <td>7%</td>
+              <td>4%</td>
+            </tr>
+            <tr>
+              <td>2023-24</td>
+              <td>1%</td>
+              <td>2%</td>
+              <td>N/A</td>
+              <td>10%</td>
+            </tr>
+          </tbody>
+        </table>
 
-        <h3>Heavy Drug Use (3+ days in past month, 2022-23)</h3>
-        <div class="kpi-grid">
-          <div class="kpi-card info">
-            <div class="label">Grade 7</div>
-            <div class="value">2%</div>
-            <div class="context">Consistently low</div>
-          </div>
-          
-          <div class="kpi-card warning">
-            <div class="label">Grade 9</div>
-            <div class="value">6%</div>
-            <div class="context">3x Grade 7 rate</div>
-          </div>
-          
-          <div class="kpi-card warning">
-            <div class="label">Grade 11</div>
-            <div class="value">11%</div>
-            <div class="context">5.5x Grade 7 rate</div>
-          </div>
-          
-          <div class="kpi-card danger">
-            <div class="label">Non-Traditional</div>
-            <div class="value">22%</div>
-            <div class="context">Crisis level (11x Grade 7)</div>
-          </div>
-        </div>
-
-        <h3>Substance Use on School Property (Past 30 Days)</h3>
-        <p><strong>2018-19 Baseline:</strong> 5% (Grade 7), 8% (Grade 9), 12% (Grade 11), 12% (Non-Traditional)</p>
+        <h3>On-Campus Substance Use</h3>
         <div class="alert alert-warning">
-          <strong>School Safety Concern:</strong> 8-12% of high school students use substances on campus, representing significant safety issue and intervention opportunity. Indicates need for enhanced monitoring, safe reporting mechanisms, and school-based intervention programs.
+          <strong>School Safety Concern:</strong> 8-12% of high school students report using substances on campus, representing both a safety issue and intervention opportunity. Pattern consistent 2018-2024, indicating need for enhanced monitoring and school-based programs.
         </div>
       </div>
-
-      <div class="insight-box" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-        <h3>🎯 Evidence-Based Intervention Priorities</h3>
-        <p>
-          <strong>Priority 1: Grade 8-9 Transition Intensive Prevention</strong> - Substance use doubles at this critical point. Double workshop frequency for 8th graders, create summer bridge programs, and implement peer mentorship for rising 9th graders.
-        </p>
-        <p>
-          <strong>Priority 2: Non-Traditional Student Crisis Response</strong> - 28-35% AOD use demands specialized protocols including trauma-informed care, intensive case management, and mental health integration.
-        </p>
-        <p>
-          <strong>Priority 3: School-Based Intervention</strong> - With 8-12% on-campus use, implement enhanced monitoring, safe reporting mechanisms, and immediate intervention protocols.
-        </p>
-      </div>
-
     </div>
   </div>
 
@@ -1147,426 +1224,138 @@
     <div class="container">
       
       <div class="hero">
-        <h1>Crime & Public Safety Baseline (2018-2023) [ENHANCED]</h1>
-        <div class="subtitle">18-Year Historical Context + Census Tract Crime Intelligence</div>
+        <h1>Crime & Public Safety Baseline</h1>
+        <div class="subtitle">18-Year Trends with Census Tract Intelligence (2007-2024)</div>
       </div>
 
       <div class="alert alert-success">
-        <h3>✅ BASELINE STRENGTH: ⭐⭐⭐⭐☆ (4/5) - STRONG (ENHANCED WITH CENSUS TRACT DATA)</h3>
-        <p><strong>18 years of crime data PLUS census tract crime grade classifications.</strong> Now enables precise geographic targeting for Prop 64 programming and correlation with CalEnviroScreen 4.0 environmental burden data.</p>
+        <h3>✅ BASELINE STRENGTH: <span class="quality-stars">⭐⭐⭐⭐☆</span> (4/5) - STRONG</h3>
+        <p><strong>18 years of crime data NOW mapped to census tract geography.</strong> Crime classifications (Grade A+ through F) enable correlation with CalEnviroScreen environmental burden scores and precise geographic targeting for Prop 64 interventions.</p>
       </div>
 
       <div class="section-card">
-        <h2>NEW: Census Tract Crime Grade Classifications</h2>
+        <h2>Geographic Crime Intelligence</h2>
         
-        <div class="alert alert-success">
-          <h3>🎯 CRITICAL ENHANCEMENT: Geographic Data Structure Resolved</h3>
-          <p><strong>Crime data now aligned with census tract geography</strong>, enabling direct correlation with CalEnviroScreen 4.0. Previously incompatible police beat structure (8 beats) has been mapped to census tract framework (29 tracts).</p>
+        <div class="metric-highlight">
+          <div class="description">ALL 10 safest neighborhoods located in</div>
+          <div class="big-number">BEAT 3</div>
+          <div class="description">Southeast census tracts - Grade A+ zones</div>
         </div>
 
-        <h3>Grade F: Highest Risk Census Tract Zones (PROP 64 PRIORITY AREAS)</h3>
-        
-        <div class="stat-highlight" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
-          <div>Victimization risk in Grade F zones:</div>
-          <div class="big-number">1 in 18</div>
-          <div>(Southwest/Central census tracts)</div>
-        </div>
-
+        <h3>Census Tract Crime Classifications</h3>
         <table>
           <thead>
             <tr>
-              <th>Census Tract Zone</th>
-              <th>Key Neighborhoods</th>
-              <th>Crime Types</th>
-              <th>18-Year Trend</th>
-              <th>Priority</th>
+              <th>Grade</th>
+              <th>Census Tract Zones</th>
+              <th>Victimization Risk</th>
+              <th>Key Areas</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
             <tr style="background: #f8d7da;">
-              <td><strong>Central City Census Tracts</strong></td>
-              <td>Downtown, Old City Vallejo (Beat 7)</td>
-              <td>All crime types, densest clustering citywide</td>
-              <td>Persistent high levels 2007-2024</td>
-              <td><span class="priority-badge priority-critical">CRITICAL</span></td>
+              <td><span class="grade-badge grade-f">F</span></td>
+              <td>Central, Southwest, Northwest</td>
+              <td><strong>1 in 18</strong></td>
+              <td>Downtown, South Vallejo, Crest</td>
+              <td>PROP 64 TARGET</td>
             </tr>
             <tr>
-              <td><strong>Southwest Census Tracts</strong></td>
-              <td>Greater South Vallejo, Mare Island (Beats 5, 6)</td>
-              <td>Violent crimes, robberies, gang activity, homicides</td>
-              <td>Homicides +31% (2023-24), firearms 90%+</td>
-              <td><span class="priority-badge priority-critical">CRITICAL</span></td>
+              <td><span class="grade-badge grade-c">C</span></td>
+              <td>Northern, East-Central</td>
+              <td>1 in 25-30</td>
+              <td>Mixed residential/commercial</td>
+              <td>Moderate risk</td>
             </tr>
-            <tr style="background: #f8d7da;">
-              <td><strong>Northwest Census Tracts</strong></td>
-              <td>Crest Area (Beat 1)</td>
-              <td>Larcenies, stolen vehicles, property crimes</td>
-              <td>Auto theft +16% overall trend</td>
-              <td><span class="priority-badge priority-critical">CRITICAL</span></td>
+            <tr style="background: #d5f4e6;">
+              <td><span class="grade-badge grade-a-plus">A+</span></td>
+              <td>Eastern, Southeast, Northeast</td>
+              <td><strong>1 in 37</strong></td>
+              <td>Glen Cove, Heather Ridge</td>
+              <td>Control group</td>
             </tr>
           </tbody>
         </table>
-
-        <div class="alert alert-danger">
-          <h3>Prop 64 Target Validation: CONFIRMED</h3>
-          <p><strong>Greater South Vallejo (southwest census tracts) and Crest Area (northwest census tracts) are CONFIRMED as Grade F high-crime zones.</strong> These should be cross-referenced with CalEnviroScreen 4.0 scores to identify dual high-crime + high-environmental burden census tracts requiring priority intervention.</p>
-        </div>
-
-        <h3>Grade A+: Lowest Risk Census Tract Zones (Control Group Areas)</h3>
-        
-        <div class="stat-highlight" style="background: linear-gradient(135deg, #27ae60 0%, #229954 100%);">
-          <div>Victimization risk in Grade A+ zones:</div>
-          <div class="big-number">1 in 37</div>
-          <div>(Eastern/Southeast census tracts)</div>
-        </div>
-
-        <div class="alert alert-success">
-          <h3>ALL 10 Safest Neighborhoods in Beat 3 (Southeast Census Tracts)</h3>
-          <p><strong>Critical Geographic Pattern:</strong> ALL 10 safest neighborhoods cluster in Police Beat 3 (Southeast Vallejo), covering eastern and southeastern census tracts. This creates a clear geographic safety corridor providing:</p>
-          <ul>
-            <li><strong>Control group data</strong> for Prop 64 baseline measurement</li>
-            <li><strong>Success model</strong> showing what works in residential areas</li>
-            <li><strong>Comparison baseline</strong> for assessing intervention impact in Grade F zones</li>
-          </ul>
-        </div>
-
-        <div class="kpi-grid">
-          <div class="kpi-card success">
-            <div class="label">#1 Glen Cove</div>
-            <div class="value">A+</div>
-            <div class="context">Far Southeast - Safest neighborhood</div>
-          </div>
-          
-          <div class="kpi-card success">
-            <div class="label">#2 Heather Ridge North</div>
-            <div class="value">A+</div>
-            <div class="context">68% below national average</div>
-          </div>
-          
-          <div class="kpi-card success">
-            <div class="label">#3-5 Madigan neighborhoods</div>
-            <div class="value">A+</div>
-            <div class="context">East Vallejo residential</div>
-          </div>
-          
-          <div class="kpi-card success">
-            <div class="label">#6-10 Additional A+ Areas</div>
-            <div class="value">A+</div>
-            <div class="context">Hunter Ranch, Somerset, etc.</div>
-          </div>
-        </div>
       </div>
 
       <div class="section-card">
-        <h2>Mixed Public Safety Picture (2018-2023)</h2>
+        <h2>Homicide Crisis</h2>
         
         <div class="kpi-grid">
-          <div class="kpi-card success">
-            <div class="label">Property Crime</div>
-            <div class="value">-16.4%</div>
-            <div class="context">2018 (478.7) → 2023 (399.9 per 100k)</div>
-          </div>
-          
-          <div class="kpi-card warning">
-            <div class="label">Violent Crime</div>
-            <div class="value">+2.4%</div>
-            <div class="context">2018 (434.6) → 2023 (445.2 per 100k)</div>
+          <div class="kpi-card danger">
+            <div class="label">2018 Baseline</div>
+            <div class="value">8</div>
+            <div class="context">6.4 per 100k</div>
+            <div class="trend">50% firearms</div>
           </div>
           
           <div class="kpi-card danger">
-            <div class="label">Homicides</div>
+            <div class="label">2020 Peak</div>
+            <div class="value">28</div>
+            <div class="context">23.1 per 100k</div>
+            <div class="trend increase">96% firearms</div>
+          </div>
+          
+          <div class="kpi-card danger">
+            <div class="label">2023 Pre-Launch</div>
+            <div class="value">19</div>
+            <div class="context">15.2 per 100k</div>
+            <div class="trend increase">90%+ firearms</div>
+          </div>
+          
+          <div class="kpi-card danger">
+            <div class="label">Total Increase</div>
             <div class="value">+137%</div>
-            <div class="context">2018 (8) → 2023 (19 murders)</div>
-          </div>
-          
-          <div class="kpi-card warning">
-            <div class="label">vs. U.S. Average (2023)</div>
-            <div class="value">2.1x</div>
-            <div class="context">Violent crime still elevated</div>
+            <div class="context">From baseline</div>
+            <div class="trend increase">Concentrated in Grade F zones</div>
           </div>
         </div>
 
-        <div class="alert alert-info">
-          <strong>Program Launch Context:</strong> The program launched in May 2023 during an established improvement trajectory. Property crime had declined 49% from its 2013 peak, and violent crime had decreased 25% from its 2020 peak. However, the homicide crisis persisted, with rates 137% above 2018 baseline and increasingly concentrated in Grade F southwest census tracts (Beats 5, 6, 7).
-        </div>
-      </div>
-
-      <div class="section-card">
-        <h2>The Homicide Crisis: Geographic Concentration in Grade F Zones</h2>
-        
-        <div class="stat-highlight" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
-          <div>Homicides increased</div>
-          <div class="big-number">+137%</div>
-          <div>from 2018 baseline (8 murders → 19 in 2023)</div>
-        </div>
-
-        <h3>Homicide Trends with Census Tract Geographic Concentration (2018-2023)</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Year</th>
-              <th>Total</th>
-              <th>Rate per 100k</th>
-              <th>Firearm %</th>
-              <th>Census Tract Concentration</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="background: #fff3cd;">
-              <td><strong>2018 (Baseline)</strong></td>
-              <td><strong>8</strong></td>
-              <td><strong>6.4</strong></td>
-              <td><strong>50%</strong></td>
-              <td>Scattered</td>
-            </tr>
-            <tr>
-              <td>2019</td>
-              <td>12</td>
-              <td>9.6</td>
-              <td>83%</td>
-              <td>Scattered</td>
-            </tr>
-            <tr style="background: #f8d7da;">
-              <td><strong>2020 (Peak)</strong></td>
-              <td><strong>27</strong></td>
-              <td><strong>21.6</strong></td>
-              <td><strong>96%</strong></td>
-              <td style="font-weight: bold;">SW Census Tracts (Beats 5,6,7)</td>
-            </tr>
-            <tr>
-              <td>2021</td>
-              <td>22</td>
-              <td>17.6</td>
-              <td>Est. 90%+</td>
-              <td>SW Census Tracts (Beats 5,6,7)</td>
-            </tr>
-            <tr>
-              <td>2022</td>
-              <td>22</td>
-              <td>17.6</td>
-              <td>Est. 90%+</td>
-              <td>SW Census Tracts (Beats 5,6,7)</td>
-            </tr>
-            <tr style="background: #fff3cd;">
-              <td><strong>2023 (Pre-Launch)</strong></td>
-              <td><strong>19</strong></td>
-              <td><strong>15.2</strong></td>
-              <td><strong>Est. 90%+</strong></td>
-              <td style="font-weight: bold;">SW Census Tracts (Beats 5,6,7)</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div class="alert alert-danger">
-          <h3>Critical Homicide Geographic Concentration Findings</h3>
-          <ul>
-            <li><strong>Increasing concentration in Grade F southwest census tracts (Beats 5, 6, 7)</strong> - South/Southwest Vallejo</li>
-            <li><strong>Gang territory overlap documented</strong> in these census tract zones</li>
-            <li><strong>Firearm involvement increased from 50% to 90%+</strong> - lethality escalation</li>
-            <li><strong>Despite overall crime improvements, homicides concentrated in Grade F zones</strong></li>
-            <li><strong>Grade A+ eastern/southeastern census tracts remain virtually homicide-free</strong></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="section-card">
-        <h2>Geographic Crime Distribution by Census Tract Zone</h2>
-        
-        <h3>Crime Type Clustering Patterns</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Crime Type</th>
-              <th>Hotspot Census Tract Zones</th>
-              <th>Pattern Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Larceny (Most Common)</strong></td>
-              <td>Central, Northwest, Southwest tracts (Beats 1,5,6,7)</td>
-              <td>75%+ concentrated in commercial census tract zones</td>
-            </tr>
-            <tr style="background: #f2f2f2;">
-              <td><strong>Stolen Vehicles</strong></td>
-              <td>Northwest, West, Southwest tracts near I-80/SR-37</td>
-              <td>Concentrated in census tracts near highway corridors</td>
-            </tr>
-            <tr>
-              <td><strong>Aggravated Assault</strong></td>
-              <td>Central, West tracts (Beats 1,5,7)</td>
-              <td>Clustered in downtown nightlife census tract zones</td>
-            </tr>
-            <tr style="background: #f2f2f2;">
-              <td><strong>Robbery</strong></td>
-              <td>Southwest, West, Central tracts (Beats 5,6,7)</td>
-              <td>Commercial corridors in high-crime census tracts</td>
-            </tr>
-            <tr style="background: #f8d7da;">
-              <td><strong>Homicide (Critical)</strong></td>
-              <td>Southwest census tracts (Beats 5,6,7)</td>
-              <td>Gang territory overlap in Grade F zones</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h3>Victimization Risk by Census Tract Zone</h3>
-        <div class="kpi-grid">
-          <div class="kpi-card danger">
-            <div class="label">Grade F Zones</div>
-            <div class="value">1 in 18</div>
-            <div class="context">Southwest census tracts (HIGHEST risk)</div>
-          </div>
-          
-          <div class="kpi-card warning">
-            <div class="label">Grade C Zones</div>
-            <div class="value">1 in 25-30</div>
-            <div class="context">Northern, East-Central tracts (MODERATE)</div>
-          </div>
-          
-          <div class="kpi-card success">
-            <div class="label">Grade A+ Zones</div>
-            <div class="value">1 in 37</div>
-            <div class="context">Eastern/Southeast tracts (SAFEST)</div>
-          </div>
-        </div>
-
-        <div class="alert alert-info">
-          <strong>Geographic Pattern:</strong> Clear east-west divide. Grade F central/southwest census tracts face crisis-level crime (1 in 18 victimization) while Grade A+ eastern/southeastern census tracts achieve near-suburban safety (1 in 37 victimization). This 2x risk difference demonstrates extreme geographic inequality requiring targeted intervention.
-        </div>
-      </div>
-
-      <div class="section-card">
-        <h2>Violent Crime Trends (2018-2023)</h2>
-        
+        <h3>Violent Crime Trends</h3>
         <table>
           <thead>
             <tr>
               <th>Year</th>
               <th>Rate per 100k</th>
-              <th>vs. U.S. Average</th>
-              <th>Year-over-Year</th>
-              <th>Primary Census Zones</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="background: #d5f4e6;">
-              <td><strong>2018</strong></td>
-              <td><strong>434.6</strong></td>
-              <td>2.0x higher</td>
-              <td style="color: #27ae60; font-weight: bold;">-10.5%</td>
-              <td>Scattered</td>
-            </tr>
-            <tr>
-              <td>2019</td>
-              <td>493.7</td>
-              <td>2.3x higher</td>
-              <td style="color: #e74c3c;">+13.6%</td>
-              <td>Concentrating</td>
-            </tr>
-            <tr style="background: #f8d7da;">
-              <td><strong>2020 (Peak)</strong></td>
-              <td><strong>583.3</strong></td>
-              <td><strong>2.6x higher</strong></td>
-              <td style="color: #e74c3c; font-weight: bold;">+18.1%</td>
-              <td style="font-weight: bold;">Grade F zones (1,5,6,7)</td>
-            </tr>
-            <tr>
-              <td>2021</td>
-              <td>549.1</td>
-              <td>2.5x higher</td>
-              <td style="color: #27ae60;">-5.9%</td>
-              <td>Grade F zones</td>
-            </tr>
-            <tr>
-              <td>2022</td>
-              <td>549.1</td>
-              <td>2.5x higher</td>
-              <td>0%</td>
-              <td>Grade F zones</td>
-            </tr>
-            <tr style="background: #d5f4e6;">
-              <td><strong>2023 (Pre-Launch)</strong></td>
-              <td><strong>445.2</strong></td>
-              <td><strong>2.1x higher</strong></td>
-              <td style="color: #27ae60; font-weight: bold;">-18.9%</td>
-              <td style="font-weight: bold;">Grade F zones (1,5,6,7)</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p><strong>Trend Analysis:</strong> Violent crime peaked in 2020 at 583.3 per 100k (COVID impact), then declined -25% by 2023. However, crime increasingly concentrated in Grade F census tract zones (Beats 1, 5, 6, 7 - Central/Southwest) while Grade A+ zones maintained safety.</p>
-      </div>
-
-      <div class="section-card">
-        <h2>Property Crime Trends (2018-2023)</h2>
-        
-        <table>
-          <thead>
-            <tr>
-              <th>Year</th>
-              <th>Rate per 100k</th>
-              <th>vs. U.S. Average</th>
-              <th>Year-over-Year</th>
+              <th>vs. National</th>
+              <th>Change</th>
               <th>Geographic Pattern</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>2018</td>
-              <td>478.7</td>
-              <td>2.5x higher</td>
-              <td style="color: #27ae60;">-5.7%</td>
-              <td>More distributed</td>
-            </tr>
-            <tr style="background: #f8d7da;">
-              <td><strong>2019 (Peak)</strong></td>
-              <td><strong>628.4</strong></td>
-              <td><strong>3.7x higher</strong></td>
-              <td style="color: #e74c3c; font-weight: bold;">+31.3%</td>
-              <td>Citywide</td>
+              <td>434.6</td>
+              <td>2.0x</td>
+              <td>Baseline</td>
+              <td>Distributed</td>
             </tr>
             <tr>
               <td>2020</td>
-              <td>506.8</td>
-              <td>3.0x higher</td>
-              <td style="color: #27ae60;">-19.4%</td>
+              <td>583.3</td>
+              <td>2.6x</td>
+              <td style="color: #e74c3c;">+34.2%</td>
               <td>Concentrating</td>
             </tr>
             <tr>
-              <td>2021</td>
-              <td>453.6</td>
-              <td>2.7x higher</td>
-              <td style="color: #27ae60;">-10.5%</td>
+              <td>2023</td>
+              <td>445.2</td>
+              <td>2.1x</td>
+              <td style="color: #27ae60;">-23.7%</td>
               <td>Grade F zones</td>
-            </tr>
-            <tr>
-              <td>2022</td>
-              <td>453.5</td>
-              <td>2.7x higher</td>
-              <td>0%</td>
-              <td>Grade F zones</td>
-            </tr>
-            <tr style="background: #d5f4e6;">
-              <td><strong>2023 (Pre-Launch)</strong></td>
-              <td><strong>399.9</strong></td>
-              <td><strong>2.5x higher</strong></td>
-              <td style="color: #27ae60; font-weight: bold;">-11.8%</td>
-              <td style="font-weight: bold;">Grade F zones (1,5,6,7)</td>
             </tr>
           </tbody>
         </table>
-
-        <p><strong>Geographic Shift:</strong> Property crime declined 37% from 2019 peak BUT became increasingly concentrated in Grade F commercial census tract zones. Grade A+ residential census tracts (Beat 3) achieved 57% residential burglary reduction, demonstrating targeted intervention success.</p>
       </div>
 
       <div class="section-card">
-        <h2>Police Staffing Crisis Context</h2>
+        <h2>Police Staffing Crisis</h2>
         
-        <div class="stat-highlight" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
-          <div>Police staffing decreased</div>
-          <div class="big-number">-23%</div>
-          <div>during baseline period (99 → 76 officers)</div>
+        <div class="metric-highlight" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
+          <div class="description">Police staffing decreased</div>
+          <div class="big-number">-32%</div>
+          <div class="description">111 → 76 officers (2020-2023)</div>
         </div>
 
         <table>
@@ -1575,174 +1364,196 @@
               <th>Year</th>
               <th>Officers</th>
               <th>Per 1,000 Residents</th>
-              <th>CA Average</th>
-              <th>Staffing Gap</th>
-              <th>Officers per Beat</th>
+              <th>vs. CA Average</th>
+              <th>Impact</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="background: #fff3cd;">
-              <td><strong>2018</strong></td>
-              <td><strong>99</strong></td>
-              <td><strong>0.82</strong></td>
-              <td><strong>2.31</strong></td>
-              <td style="color: #e74c3c; font-weight: bold;"><strong>-64%</strong></td>
-              <td>12.4</td>
+            <tr>
+              <td>2018</td>
+              <td>99</td>
+              <td>0.82</td>
+              <td>-64%</td>
+              <td>Already critical</td>
             </tr>
             <tr>
               <td>2020</td>
               <td>111</td>
               <td>0.91</td>
-              <td>2.36</td>
-              <td style="color: #e74c3c;">-61%</td>
-              <td>13.9</td>
+              <td>-61%</td>
+              <td>Peak staffing</td>
             </tr>
             <tr>
-              <td>2022</td>
-              <td>86</td>
-              <td>0.69</td>
-              <td>2.28</td>
-              <td style="color: #e74c3c;">-70%</td>
-              <td>10.8</td>
-            </tr>
-            <tr style="background: #f8d7da;">
-              <td><strong>2023 (Pre-Launch)</strong></td>
-              <td><strong>76</strong></td>
-              <td><strong>0.62</strong></td>
-              <td><strong>2.28</strong></td>
-              <td style="color: #e74c3c; font-weight: bold;"><strong>-73%</strong></td>
-              <td style="font-weight: bold;">9.5</td>
+              <td>2023</td>
+              <td>76</td>
+              <td>0.62</td>
+              <td>-73%</td>
+              <td>Crisis level</td>
             </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+  </div>
 
-        <div class="alert alert-danger">
-          <h3>Geographic Coverage Crisis</h3>
-          <ul>
-            <li><strong>With 8 police beats: average 9-10 officers per beat total (2023)</strong></li>
-            <li><strong>Accounting for shifts/days off: 2-3 officers per beat per shift</strong></li>
-            <li><strong>Grade F high-crime census tract zones require disproportionate resources</strong>, leaving Grade C and A+ zones exposed</li>
-            <li><strong>Geographic response times severely impacted</strong> in outlying census tract areas</li>
-            <li><strong>Vallejo maintained 60-73% below CA average</strong> throughout entire baseline period</li>
-          </ul>
-        </div>
+  <!-- YOUTH INDICATORS VIEW -->
+  <div id="youth-view" class="dashboard-view">
+    <div class="container">
+      
+      <div class="hero">
+        <h1>Youth-Specific Indicators</h1>
+        <div class="subtitle">Education, Mental Health, and Risk Factors</div>
       </div>
 
       <div class="section-card">
-        <h2>Youth Violence & Victimization</h2>
+        <h2>Mental Health Crisis</h2>
         
-        <h3>Youth Suicide Crisis</h3>
-        <div class="stat-highlight" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
-          <div>Youth suicide rate increased</div>
-          <div class="big-number">+144%</div>
-          <div>from 3.2 to 7.8 per 100k (ages 15-24)</div>
+        <div class="metric-highlight" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
+          <div class="description">Depression affects</div>
+          <div class="big-number">42.7%</div>
+          <div class="description">of Grade 11 students</div>
         </div>
 
         <table>
           <thead>
             <tr>
-              <th>Time Period</th>
-              <th>Rate per 100k (Ages 15-24)</th>
-              <th>Change from Baseline</th>
+              <th>Grade</th>
+              <th>Overall Depression</th>
+              <th>Female</th>
+              <th>LGBTQ+</th>
+              <th>Intervention Need</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>2005-2010 (Baseline)</td>
-              <td>3.2</td>
-              <td>--</td>
+              <td>Grade 7</td>
+              <td>33.6%</td>
+              <td>44.4%</td>
+              <td>N/A</td>
+              <td>Early intervention critical</td>
             </tr>
             <tr>
-              <td>2011-2015</td>
-              <td>4.7</td>
-              <td style="color: #e74c3c;">+47%</td>
+              <td>Grade 9</td>
+              <td>39.3%</td>
+              <td>50.0%</td>
+              <td>N/A</td>
+              <td>Support urgent</td>
             </tr>
             <tr>
-              <td>2016-2020</td>
-              <td>6.1</td>
-              <td style="color: #e74c3c;">+91%</td>
-            </tr>
-            <tr style="background: #f8d7da;">
-              <td><strong>2021-2022</strong></td>
-              <td><strong>7.8</strong></td>
-              <td style="color: #e74c3c; font-weight: bold;"><strong>+144%</strong></td>
+              <td>Grade 11</td>
+              <td>42.7%</td>
+              <td>53.8%</td>
+              <td>68%</td>
+              <td>Crisis intervention</td>
             </tr>
           </tbody>
         </table>
+        <p class="source-citation">Source: Youth Wellness Comprehensive Report</p>
+      </div>
 
-        <p><strong>Accelerating Crisis:</strong> Youth suicide rates increased in every time period analyzed, with the rate of increase accelerating in recent years. The 2021-2022 rate (7.8 per 100k) is 2.4 times the 2005-2010 baseline.</p>
-
-        <h3>Youth Overdose Deaths</h3>
+      <div class="section-card">
+        <h2>School Performance Crisis</h2>
+        
         <div class="kpi-grid">
           <div class="kpi-card danger">
-            <div class="label">2015-2020 Increase</div>
-            <div class="value">+340%</div>
-            <div class="context">Fastest increase of any age group</div>
+            <div class="label">English Proficiency</div>
+            <div class="value">22-30%</div>
+            <div class="context">vs. 46% state</div>
+            <div class="trend increase">16-24pp gap</div>
           </div>
           
           <div class="kpi-card danger">
-            <div class="label">Primary Driver (2020-2022)</div>
-            <div class="value">Fentanyl</div>
-            <div class="context">Illicit pills increasingly common</div>
+            <div class="label">Math Proficiency</div>
+            <div class="value">11-13%</div>
+            <div class="context">vs. 34% state</div>
+            <div class="trend increase">21-23pp gap</div>
           </div>
           
           <div class="kpi-card danger">
-            <div class="label">Youth Share of Overdoses</div>
-            <div class="value">8.7%</div>
-            <div class="context">Up from <3% in 2005</div>
-          </div>
-        </div>
-
-        <h3>CHKS Violence & Victimization Data (7th Graders, 2021-22)</h3>
-        <div class="kpi-grid">
-          <div class="kpi-card danger">
-            <div class="label">Bullying</div>
-            <div class="value">39.6%</div>
-            <div class="context">Experienced in past 12 months</div>
-          </div>
-          
-          <div class="kpi-card danger">
-            <div class="label">Physical Assault</div>
+            <div class="label">Chronic Absenteeism</div>
             <div class="value">41%</div>
-            <div class="context">By peer in past 12 months</div>
+            <div class="context">Bethel HS</div>
+            <div class="trend increase">+70% increase</div>
           </div>
           
           <div class="kpi-card warning">
-            <div class="label">Cyberbullying</div>
-            <div class="value">17%</div>
-            <div class="context">Online harassment</div>
+            <div class="label">Graduation Rate</div>
+            <div class="value">79%</div>
+            <div class="context">vs. 87% state</div>
+            <div class="trend increase">8pp gap</div>
           </div>
         </div>
 
-        <h3>Juvenile Arrest Data (2023 Baseline)</h3>
-        <div class="kpi-grid">
-          <div class="kpi-card danger">
-            <div class="label">Juvenile Arrest Rate</div>
-            <div class="value">5.2 per 1,000</div>
-            <div class="context">Ages 10-17</div>
-          </div>
-          
-          <div class="kpi-card danger">
-            <div class="label">vs. CA Average</div>
-            <div class="value">+37%</div>
-            <div class="context">State average: 3.8 per 1,000</div>
-          </div>
+        <h3>English Learner Crisis</h3>
+        <div class="alert alert-danger">
+          <strong>Critical Finding:</strong> Only 2% of English Learners achieve college readiness and only 50% graduate. This means <strong>48% of English Learners neither graduate nor achieve college readiness</strong> - the most severe educational barrier documented.
         </div>
       </div>
 
-      <div class="insight-box">
-        <h3>🎯 Public Safety Evaluation Implications (Enhanced)</h3>
-        <p>
-          The enhanced baseline now includes <strong>census tract crime grade classifications (A+ through F)</strong>, enabling precise geographic targeting for Prop 64 programming. Crime data aligned with census tract geography can now be correlated with CalEnviroScreen 4.0 environmental burden scores.
-        </p>
-        <p>
-          <strong>Critical geographic findings:</strong> ALL 10 safest neighborhoods cluster in Grade A+ southeastern census tracts (Beat 3), while Grade F zones (Central, Southwest, Northwest) face crisis-level crime. Homicides increasingly concentrated in Grade F southwest census tracts (Beats 5, 6, 7) with gang territory overlap.
-        </p>
-        <p>
-          <strong>Next step CRITICAL:</strong> Submit PRA request to Vallejo PD for precise census tract-level crime statistics to eliminate geographic approximation. Current mapping provides strong baseline; exact tract data will enable rigorous impact measurement of neighborhood-level interventions.
-        </p>
+      <div class="section-card">
+        <h2>Suspension Disparities</h2>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Race/Ethnicity</th>
+              <th>2018-19 Rate</th>
+              <th>2023-24 Rate</th>
+              <th>Change</th>
+              <th>vs. Filipino</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pacific Islander</td>
+              <td>25.7%</td>
+              <td>44.4%</td>
+              <td style="color: #e74c3c;">+72.8%</td>
+              <td style="color: #e74c3c;">29x higher</td>
+            </tr>
+            <tr>
+              <td>African American</td>
+              <td>39.1%</td>
+              <td>24.4%</td>
+              <td style="color: #27ae60;">-37.6%</td>
+              <td style="color: #e74c3c;">16x higher</td>
+            </tr>
+            <tr>
+              <td>Hispanic/Latino</td>
+              <td>16.2%</td>
+              <td>13.8%</td>
+              <td style="color: #27ae60;">-14.8%</td>
+              <td style="color: #e74c3c;">9x higher</td>
+            </tr>
+            <tr>
+              <td>Filipino</td>
+              <td>8.4%</td>
+              <td>1.5%</td>
+              <td style="color: #27ae60;">-82.1%</td>
+              <td>Reference</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="source-citation">Source: Vallejo High Schools Complete Data Report</p>
+
+        <div class="alert alert-warning">
+          <strong>Post-Pandemic Shift:</strong> Drug-related suspensions emerged as leading category (29.5% of all suspensions in 2023-24), nearly doubling from pre-pandemic levels, indicating changed substance use patterns requiring enhanced prevention.
+        </div>
       </div>
 
+      <div class="section-card">
+        <h2>School Connectedness Deficit</h2>
+        
+        <div class="metric-highlight" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);">
+          <div class="description">Only</div>
+          <div class="big-number">24-32%</div>
+          <div class="description">of students feel connected to school</div>
+        </div>
+
+        <div class="alert alert-warning">
+          <strong>Protective Factor Gap:</strong> Research shows >50% school connectedness needed for protective effect against substance use and violence. Vallejo has a 18-26 percentage point gap to achieve protective threshold. School connectedness reduces risk by 50%+ across depression, suicidal ideation, substance use, and truancy.
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1751,139 +1562,53 @@
     <div class="container">
       
       <div class="hero">
-        <h1>Economic & Employment Baseline (2018-2023)</h1>
-        <div class="subtitle">Youth Disconnection, Poverty & Education Outcomes</div>
-      </div>
-
-      <div class="alert alert-warning">
-        <h3>⚠️ BASELINE STRENGTH: ⭐⭐⭐☆☆ (3/5) - MODERATE</h3>
-        <p><strong>Strong economic context documented</strong> with clear disconnection trends, poverty rates, and education outcomes. However, lacks participant-level pre-program assessments of work readiness, life skills, and individual baselines necessary for rigorous outcome measurement.</p>
+        <h1>Economic & Employment Baseline</h1>
+        <div class="subtitle">Youth Disconnection and Economic Opportunity</div>
       </div>
 
       <div class="section-card">
-        <h2>Youth Disconnection Trends (2018-2023)</h2>
+        <h2>Youth Employment Crisis</h2>
         
-        <div class="stat-highlight" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);">
-          <div>Vallejo youth disconnection rate</div>
-          <div class="big-number">7.9%</div>
-          <div>Ages 16-19 not in school, not working</div>
+        <div class="metric-highlight" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
+          <div class="description">Youth jobs declined</div>
+          <div class="big-number">-33%</div>
+          <div class="description">6,895 → 4,600 positions (2018-2024)</div>
         </div>
 
-        <div class="kpi-grid">
-          <div class="kpi-card warning">
-            <div class="label">vs. Solano County</div>
-            <div class="value">+11.4%</div>
-            <div class="context">Vallejo 7.9% vs County 7.1%</div>
-          </div>
-          
-          <div class="kpi-card warning">
-            <div class="label">vs. California</div>
-            <div class="value">+21.5%</div>
-            <div class="context">Vallejo 7.9% vs State 6.5%</div>
-          </div>
-        </div>
-
-        <h3>Solano County Disconnection Trends (2018-2023)</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Year</th>
-              <th>Disconnection Rate</th>
-              <th>Change from 2014 Peak</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2014 (Peak)</td>
-              <td>9.2%</td>
-              <td>--</td>
-            </tr>
-            <tr style="background: #fff3cd;">
-              <td><strong>2018</strong></td>
-              <td><strong>7.2%</strong></td>
-              <td style="color: #27ae60; font-weight: bold;">-21.7%</td>
-            </tr>
-            <tr>
-              <td>2019</td>
-              <td>7.3%</td>
-              <td style="color: #27ae60;">-20.7%</td>
-            </tr>
-            <tr>
-              <td>2020</td>
-              <td>7.0%</td>
-              <td style="color: #27ae60;">-23.9%</td>
-            </tr>
-            <tr>
-              <td>2021</td>
-              <td>6.9%</td>
-              <td style="color: #27ae60;">-25.0%</td>
-            </tr>
-            <tr>
-              <td>2022</td>
-              <td>6.6%</td>
-              <td style="color: #27ae60;">-28.3% (Lowest)</td>
-            </tr>
-            <tr style="background: #fff3cd;">
-              <td><strong>2023</strong></td>
-              <td><strong>6.9%</strong></td>
-              <td style="color: #27ae60; font-weight: bold;">-25.0%</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p><strong>Trend Analysis:</strong> Solano County showed 2.3 percentage point improvement from 2014 peak (9.2%) to 2023 (6.9%). However, Vallejo consistently underperforms county average, with youth facing structural disadvantages.</p>
-      </div>
-
-      <div class="section-card">
-        <h2>Youth Poverty Crisis (2018-2023 Context)</h2>
-        
-        <h3>Youth Poverty Rates by Age & Gender</h3>
         <div class="kpi-grid">
           <div class="kpi-card danger">
-            <div class="label">Males 18-24</div>
+            <div class="label">Youth Disconnection</div>
+            <div class="value">7.9%</div>
+            <div class="context">Ages 16-19</div>
+            <div class="trend increase">+11% vs. county</div>
+          </div>
+          
+          <div class="kpi-card danger">
+            <div class="label">Youth Poverty</div>
             <div class="value">26.3%</div>
-            <div class="context">Highest youth poverty rate</div>
+            <div class="context">Males 18-24</div>
+            <div class="trend increase">1 in 4 in poverty</div>
           </div>
           
           <div class="kpi-card danger">
-            <div class="label">Females 12-14</div>
-            <div class="value">28.7%</div>
-            <div class="context">Crisis-level poverty</div>
-          </div>
-          
-          <div class="kpi-card danger">
-            <div class="label">Females 18-24</div>
-            <div class="value">20.4%</div>
-            <div class="context">1 in 5 in poverty</div>
-          </div>
-          
-          <div class="kpi-card warning">
-            <div class="label">Males 15-17</div>
-            <div class="value">21.4-21.6%</div>
-            <div class="context">High school age vulnerability</div>
-          </div>
-        </div>
-
-        <h3>Deep Poverty (Below 50% of Federal Poverty Level)</h3>
-        <div class="kpi-grid">
-          <div class="kpi-card danger">
-            <div class="label">Ages 18-24</div>
+            <div class="label">Deep Poverty</div>
             <div class="value">9.6%</div>
-            <div class="context">Extreme economic vulnerability</div>
+            <div class="context">Ages 18-24</div>
+            <div class="trend increase">Extreme vulnerability</div>
           </div>
           
           <div class="kpi-card warning">
-            <div class="label">Ages 12-17</div>
-            <div class="value">2.4%</div>
-            <div class="context">Youth deep poverty</div>
+            <div class="label">No Secure Parents</div>
+            <div class="value">38%</div>
+            <div class="context">Youth households</div>
+            <div class="trend increase">+30% vs. county</div>
           </div>
         </div>
       </div>
 
       <div class="section-card">
-        <h2>Comparative Economic Disadvantage</h2>
+        <h2>Cumulative Economic Disadvantage</h2>
         
-        <h3>Vallejo vs. Solano County: Youth Vulnerability Index</h3>
         <table>
           <thead>
             <tr>
@@ -1891,205 +1616,45 @@
               <th>Vallejo</th>
               <th>Solano County</th>
               <th>Gap</th>
+              <th>Impact</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Youth Disconnection (16-19)</td>
+              <td>Youth Disconnection</td>
               <td>7.9%</td>
               <td>7.1%</td>
-              <td style="color: #e74c3c; font-weight: bold;">+11.3%</td>
+              <td style="color: #e74c3c;">+11.3%</td>
+              <td>~150-200 disconnected youth</td>
             </tr>
             <tr>
               <td>Child Poverty</td>
               <td>17.8%</td>
               <td>12.8%</td>
-              <td style="color: #e74c3c; font-weight: bold;">+39.1%</td>
+              <td style="color: #e74c3c;">+39.1%</td>
+              <td>~3,500-4,000 youth</td>
             </tr>
             <tr>
               <td>Deep Poverty</td>
               <td>7.7%</td>
               <td>5.1%</td>
-              <td style="color: #e74c3c; font-weight: bold;">+51.0%</td>
-            </tr>
-            <tr>
-              <td>No Secure Parental Employment</td>
-              <td>38.0%</td>
-              <td>29.2%</td>
-              <td style="color: #e74c3c; font-weight: bold;">+30.1%</td>
+              <td style="color: #e74c3c;">+51.0%</td>
+              <td>Extreme deprivation</td>
             </tr>
             <tr>
               <td>Median Family Income</td>
               <td>$73,525</td>
               <td>$87,082</td>
-              <td style="color: #e74c3c; font-weight: bold;">-15.6%</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div class="stat-highlight" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
-          <div>Vallejo families earn</div>
-          <div class="big-number">$13,557</div>
-          <div>LESS than Solano County average (15.6% income gap)</div>
-        </div>
-
-        <div class="alert alert-danger">
-          <strong>Cumulative Disadvantage:</strong> Across all five economic indicators, Vallejo youth face 28.2% worse outcomes than Solano County average. This structural disadvantage compounds risk factors and requires intensive, sustained intervention.
-        </div>
-      </div>
-
-      <div class="section-card">
-        <h2>Youth Unemployment Trends</h2>
-        
-        <h3>Statewide Context (California Youth Ages 16-24)</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Year</th>
-              <th>Youth Unemployment</th>
-              <th>Context</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="background: #d5f4e6;">
-              <td><strong>2019 (Pre-Pandemic)</strong></td>
-              <td><strong>9%</strong></td>
-              <td>Normal baseline</td>
-            </tr>
-            <tr style="background: #f8d7da;">
-              <td><strong>2020 (Peak)</strong></td>
-              <td><strong>18%</strong></td>
-              <td style="color: #e74c3c; font-weight: bold;">DOUBLED in one year</td>
-            </tr>
-            <tr>
-              <td>2021-2023</td>
-              <td>~10-12%</td>
-              <td>Incomplete recovery</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p><strong>Critical Finding:</strong> Youth unemployment was 2x adult rate during COVID and has not fully recovered to pre-pandemic levels.</p>
-
-        <h3>Vallejo-Fairfield MSA Unemployment</h3>
-        <div class="kpi-grid">
-          <div class="kpi-card danger">
-            <div class="label">April 2020 (Peak)</div>
-            <div class="value">16.3%</div>
-            <div class="context">Overall unemployment (youth est. 25-30%)</div>
-          </div>
-          
-          <div class="kpi-card warning">
-            <div class="label">2023 Average</div>
-            <div class="value">~5%</div>
-            <div class="context">Overall (youth est. ~10%)</div>
-          </div>
-        </div>
-
-        <div class="alert alert-warning">
-          <strong>Employment Decline:</strong> Total Vallejo workforce declined 1.35% from 2022-2023 (60,400 → 59,600). Despite economic recovery, Vallejo is losing employed residents.
-        </div>
-      </div>
-
-      <div class="section-card">
-        <h2>Education Crisis Baseline</h2>
-        
-        <h3>Graduation & Dropout Rates</h3>
-        <div class="kpi-grid">
-          <div class="kpi-card warning">
-            <div class="label">District Graduation Rate</div>
-            <div class="value">79%</div>
-            <div class="context">vs. CA 87% (persistent 8-point gap)</div>
-          </div>
-          
-          <div class="kpi-card danger">
-            <div class="label">Vallejo HS Dropout</div>
-            <div class="value">23.8%</div>
-            <div class="context">Nearly 1 in 4 students (2020)</div>
-          </div>
-          
-          <div class="kpi-card warning">
-            <div class="label">Bethel HS Dropout</div>
-            <div class="value">10%</div>
-            <div class="context">1 in 10 students (2020)</div>
-          </div>
-        </div>
-
-        <h3>Chronic Absenteeism Crisis</h3>
-        <div class="kpi-grid">
-          <div class="kpi-card warning">
-            <div class="label">2018-19 District-Wide</div>
-            <div class="value">24.1%</div>
-            <div class="context">Baseline measurement</div>
-          </div>
-          
-          <div class="kpi-card danger">
-            <div class="label">2022-23 Bethel HS</div>
-            <div class="value">41%</div>
-            <div class="context">+70% increase from baseline</div>
-          </div>
-        </div>
-
-        <h3>College Readiness Crisis (Bethel HS 2022-23)</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Student Group</th>
-              <th>College-Ready (ELA/Math)</th>
-              <th>Graduation Rate</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="background: #f8d7da;">
-              <td><strong>English Learners</strong></td>
-              <td style="color: #e74c3c; font-weight: bold;"><strong>2%</strong></td>
-              <td style="color: #f39c12; font-weight: bold;"><strong>50%</strong></td>
-              <td style="font-size: 0.9rem;">48% neither graduate nor achieve readiness</td>
-            </tr>
-            <tr>
-              <td>Black Students</td>
-              <td>Lower (3x gap vs. White)</td>
-              <td>6% gap vs. White</td>
-              <td>Significant disparity</td>
+              <td style="color: #e74c3c;">-15.6%</td>
+              <td>$13,557 gap</td>
             </tr>
           </tbody>
         </table>
 
         <div class="alert alert-danger">
-          <strong>English Learner Crisis:</strong> Only 2% of English Learners achieve college readiness, and only 50% graduate. This means <strong>48% of English Learners neither graduate nor achieve college readiness</strong> - the most severe educational barrier documented.
+          <strong>Structural Disadvantage:</strong> Across all five economic indicators, Vallejo youth face 28.2% worse outcomes than county average. This compounds risk factors and necessitates intensive, sustained intervention beyond single-issue programming.
         </div>
       </div>
-
-      <div class="section-card">
-        <h2>School Connectedness Deficit</h2>
-        
-        <div class="stat-highlight" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);">
-          <div>Only</div>
-          <div class="big-number">33-40%</div>
-          <div>of students feel connected to school</div>
-        </div>
-
-        <div class="alert alert-warning">
-          <strong>Protective Factor Gap:</strong> Research shows >50% school connectedness needed for protective effect against substance use and violence. Vallejo has a <strong>10-17 percentage point gap</strong> to achieve this protective threshold.
-          <br><br>
-          <strong>Recommendation:</strong> Student voice programs, meaningful participation opportunities, positive adult relationship building, and peer mentoring to increase connectedness.
-        </div>
-      </div>
-
-      <div class="insight-box" style="background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);">
-        <h3>🎯 Economic Baseline Implications</h3>
-        <p>
-          Vallejo youth face <strong>structural economic disadvantages</strong> across every indicator: 11% higher disconnection, 39% higher poverty, 51% higher deep poverty, 30% higher parental job insecurity, and 16% lower family income than county averages.
-        </p>
-        <p>
-          <strong>Educational crisis compounds economic vulnerability:</strong> Only 79% graduate (vs 87% state), 41% chronically absent at Bethel HS, and just 2% of English Learners achieve college readiness. These barriers limit access to living-wage employment.
-        </p>
-        <p>
-          <strong>Critical data gap:</strong> No participant-level baseline assessments of work readiness, life skills, or employment barriers. Must implement intake assessments to measure individual growth and program impact on economic outcomes.
-        </p>
-      </div>
-
     </div>
   </div>
 
@@ -2098,923 +1663,506 @@
     <div class="container">
       
       <div class="hero">
-        <h1>Health & Environmental Justice Baseline (2018-2023)</h1>
-        <div class="subtitle">Mortality Trends & Environmental Burden Analysis</div>
+        <h1>Health & Environmental Justice</h1>
+        <div class="subtitle">Environmental Burden and Community Health Indicators</div>
       </div>
 
       <div class="section-card">
-        <h2>Environmental Burden Crisis: Conditions Worsening</h2>
+        <h2>Environmental Justice Crisis</h2>
         
-        <div class="stat-highlight" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
-          <div>ALL 6 highest-burden census tracts</div>
+        <div class="metric-highlight" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
+          <div class="description">ALL 6 highest-burden census tracts</div>
           <div class="big-number">WORSENED</div>
-          <div>in environmental rankings (2015 → 2019)</div>
+          <div class="description">while rest of California improved (2015-2019)</div>
         </div>
 
-        <h3>CalEnviroScreen 3.0 → 4.0 Comparison (2015-2019 Change)</h3>
+        <h3>CalEnviroScreen Evolution</h3>
         <table>
           <thead>
             <tr>
               <th>Census Tract</th>
-              <th>CES 3.0 %ile (2015)</th>
-              <th>CES 4.0 %ile (2019)</th>
+              <th>2015 Percentile</th>
+              <th>2019 Percentile</th>
               <th>Change</th>
-              <th>Trend</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="background: #f8d7da;">
-              <td>250701</td>
-              <td>96.45</td>
-              <td style="font-weight: bold;">97.87</td>
-              <td style="color: #e74c3c; font-weight: bold;">+1.42</td>
-              <td style="color: #e74c3c; font-weight: bold;">⬆ Worsening</td>
-            </tr>
-            <tr style="background: #f8d7da;">
-              <td>250900</td>
-              <td>91.23</td>
-              <td style="font-weight: bold;">93.97</td>
-              <td style="color: #e74c3c; font-weight: bold;">+2.74</td>
-              <td style="color: #e74c3c; font-weight: bold;">⬆ Worsening</td>
-            </tr>
-            <tr style="background: #f8d7da;">
-              <td>251802</td>
-              <td>88.76</td>
-              <td style="font-weight: bold;">90.65</td>
-              <td style="color: #e74c3c; font-weight: bold;">+1.89</td>
-              <td style="color: #e74c3c; font-weight: bold;">⬆ Worsening</td>
-            </tr>
-            <tr style="background: #f8d7da;">
-              <td>251901</td>
-              <td>76.12</td>
-              <td style="font-weight: bold;">78.52</td>
-              <td style="color: #e74c3c; font-weight: bold;">+2.40</td>
-              <td style="color: #e74c3c; font-weight: bold;">⬆ Worsening</td>
-            </tr>
-            <tr style="background: #f8d7da;">
-              <td>251000</td>
-              <td>75.43</td>
-              <td style="font-weight: bold;">77.96</td>
-              <td style="color: #e74c3c; font-weight: bold;">+2.53</td>
-              <td style="color: #e74c3c; font-weight: bold;">⬆ Worsening</td>
-            </tr>
-            <tr style="background: #f8d7da;">
-              <td>251200</td>
-              <td>74.89</td>
-              <td style="font-weight: bold;">77.92</td>
-              <td style="color: #e74c3c; font-weight: bold;">+3.03</td>
-              <td style="color: #e74c3c; font-weight: bold;">⬆ Worsening</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div class="alert alert-danger">
-          <h3>CRITICAL ENVIRONMENTAL JUSTICE FINDING</h3>
-          <p><strong>Between 2015 and 2019, environmental conditions in Vallejo's highest-burden census tracts deteriorated while other parts of California improved.</strong> Changes ranged from +1.42 to +3.03 percentile points.</p>
-          <p>This suggests that <strong>without intentional intervention, environmental justice gaps are widening.</strong> The same census tracts remain in top 10% burden category - no tracts improved enough to exit high-burden status.</p>
-          <p style="margin-top: 1rem;"><strong>Prop 64 Correlation Opportunity:</strong> These high environmental burden census tracts should now be cross-referenced with the new crime grade classifications to identify dual high-pollution + high-crime zones requiring priority intervention.</p>
-        </div>
-      </div>
-
-      <div class="section-card">
-        <h2>Community Livability Crisis: SeeClickFix Reporting Data (2018-2024)</h2>
-
-        <p><strong>Analysis of 1,477 community-reported issues</strong> reveals accelerating environmental degradation and complete municipal response system failure. This data provides ground-truth validation of the environmental justice crisis documented in CalEnviroScreen rankings.</p>
-
-        <div class="stat-highlight" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
-          <div>Community complaints increased</div>
-          <div class="big-number">16.4x</div>
-          <div>from 2018 (54 reports) to 2024 (883 reports)</div>
-        </div>
-
-        <div class="kpi-grid">
-          <div class="kpi-card danger">
-            <div class="label">System Failure Rate</div>
-            <div class="value">99.5%</div>
-            <div class="context">Only 8 of 1,477 issues resolved</div>
-          </div>
-
-          <div class="kpi-card danger">
-            <div class="label">Average Wait Time</div>
-            <div class="value">782 days</div>
-            <div class="context">2.1 years per open issue</div>
-          </div>
-
-          <div class="kpi-card danger">
-            <div class="label">Environmental Issues</div>
-            <div class="value">64%</div>
-            <div class="context">945 of 1,477 reports</div>
-          </div>
-
-          <div class="kpi-card danger">
-            <div class="label">Waiting > 1 Year</div>
-            <div class="value">90.4%</div>
-            <div class="context">1,328 unresolved issues</div>
-          </div>
-        </div>
-
-        <h3>Temporal Pattern: The Crisis Escalation (2018-2024)</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Year</th>
-              <th>Reports</th>
-              <th>Change</th>
-              <th>Growth Factor</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2018</td>
-              <td>54</td>
-              <td>Baseline</td>
-              <td>1.0x</td>
-            </tr>
-            <tr>
-              <td>2019</td>
-              <td>45</td>
-              <td>-16.7%</td>
-              <td>0.83x</td>
-            </tr>
-            <tr style="background: #fff3cd;">
-              <td>2020</td>
-              <td>24</td>
-              <td>-46.7%</td>
-              <td>0.44x (Pandemic)</td>
-            </tr>
-            <tr>
-              <td>2021</td>
-              <td>39</td>
-              <td>+62.5%</td>
-              <td>0.72x</td>
-            </tr>
-            <tr style="background: #fff3cd;">
-              <td>2022</td>
-              <td>102</td>
-              <td style="font-weight: bold;">+161.5%</td>
-              <td>1.89x</td>
-            </tr>
-            <tr style="background: #f8d7da;">
-              <td>2023</td>
-              <td>330</td>
-              <td style="color: #e74c3c; font-weight: bold;">+223.5%</td>
-              <td style="font-weight: bold;">6.11x</td>
-            </tr>
-            <tr style="background: #f8d7da;">
-              <td><strong>2024</strong></td>
-              <td style="font-size: 1.2rem; font-weight: bold;">883</td>
-              <td style="color: #e74c3c; font-weight: bold;">+167.6%</td>
-              <td style="color: #e74c3c; font-weight: bold;">16.35x</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p><strong>Pattern Analysis:</strong> 2022 marks the inflection point where issues doubled. 2023 shows acceleration (6x baseline). 2024 represents crisis consolidation with sustained 100+ reports/month, peaking at 145 in July.</p>
-
-        <h3>The Homelessness Crisis: Dominant Issue Category</h3>
-        <div class="stat-highlight" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
-          <div>Homeless encampments represent</div>
-          <div class="big-number">50%</div>
-          <div>of all community-reported issues (741 of 1,477 reports)</div>
-        </div>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Rank</th>
-              <th>Issue Type</th>
-              <th>Count</th>
-              <th>% of Total</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="background: #f8d7da;">
-              <td>1</td>
-              <td><strong>Homeless Encampment (public property)</strong></td>
-              <td>404</td>
-              <td>27.4%</td>
-            </tr>
-            <tr style="background: #f8d7da;">
-              <td>2</td>
-              <td><strong>Homeless Encampment (private property)</strong></td>
-              <td>237</td>
-              <td>16.0%</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Fireworks</td>
-              <td>172</td>
-              <td>11.6%</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Storm Drain Discharge</td>
-              <td>74</td>
-              <td>5.0%</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Code Enforcement - Property</td>
-              <td>37</td>
-              <td>2.5%</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>Prostitution Activity</td>
-              <td>30</td>
-              <td>2.0%</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p><strong>Combined homelessness-related reports (public + private + unspecified) total 676 reports (45.8%)</strong>, representing the single dominant community concern. The geographic concentration of these reports should be cross-referenced with CalEnviroScreen burden tracts and crime grades.</p>
-
-        <h3>Environmental Tag Analysis</h3>
-        <div class="kpi-grid">
-          <div class="kpi-card danger">
-            <div class="label">Total Environmental Issues</div>
-            <div class="value">945</div>
-            <div class="context">64.0% of all reports</div>
-          </div>
-
-          <div class="kpi-card danger">
-            <div class="label">Encampments</div>
-            <div class="value">741</div>
-            <div class="context">78.4% of environmental</div>
-          </div>
-
-          <div class="kpi-card warning">
-            <div class="label">Litter</div>
-            <div class="value">310</div>
-            <div class="context">Often co-tagged with encampments</div>
-          </div>
-
-          <div class="kpi-card warning">
-            <div class="label">Illegal Dumping</div>
-            <div class="value">137</div>
-            <div class="context">Mattresses, furniture, tires</div>
-          </div>
-
-          <div class="kpi-card warning">
-            <div class="label">Air/Water Quality</div>
-            <div class="value">104</div>
-            <div class="context">Pollution, runoff concerns</div>
-          </div>
-
-          <div class="kpi-card warning">
-            <div class="label">Storm Drain Issues</div>
-            <div class="value">79</div>
-            <div class="context">Blockages, discharge</div>
-          </div>
-        </div>
-
-        <p><strong>Environmental issue rate increased over time:</strong> 45% (2018-2020) → 75% (2023-2024 est.), indicating shift from infrastructure/service issues to public health emergencies. Common safety concerns in descriptions include visible drug use, sanitation hazards, fire risks, and blocked pedestrian infrastructure.</p>
-
-        <h3>Municipal Response: System Breakdown</h3>
-
-        <div class="alert alert-danger">
-          <h3>Zero Effective Response Capacity</h3>
-          <p><strong>Every currently open issue has been waiting minimum 307 days (10+ months).</strong> This represents complete cessation of issue resolution. Citizens reporting in 2022-2024 have seen essentially zero resolution as backlog compounds faster than any response capacity.</p>
-        </div>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Metric</th>
-              <th>Value</th>
               <th>Status</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="background: #f8d7da;">
-              <td>Closure Rate</td>
-              <td>0.5% (8 of 1,477)</td>
-              <td style="color: #e74c3c; font-weight: bold;">System Failure</td>
+            <tr>
+              <td>250701</td>
+              <td>96.45</td>
+              <td>97.87</td>
+              <td style="color: #e74c3c;">+1.42</td>
+              <td>Worsening</td>
             </tr>
-            <tr style="background: #f8d7da;">
-              <td>Mean Age (Open Issues)</td>
-              <td>782.9 days (2.1 years)</td>
-              <td style="color: #e74c3c; font-weight: bold;">Critical Backlog</td>
+            <tr>
+              <td>250900</td>
+              <td>91.23</td>
+              <td>93.97</td>
+              <td style="color: #e74c3c;">+2.74</td>
+              <td>Worsening</td>
             </tr>
-            <tr style="background: #f8d7da;">
-              <td>Open > 1 Year</td>
-              <td>90.4% (1,328 issues)</td>
-              <td style="color: #e74c3c; font-weight: bold;">Universal Neglect</td>
+            <tr>
+              <td>251802</td>
+              <td>88.76</td>
+              <td>90.65</td>
+              <td style="color: #e74c3c;">+1.89</td>
+              <td>Worsening</td>
             </tr>
-            <tr style="background: #f8d7da;">
-              <td>Open > 2 Years</td>
-              <td>35.7% (525 issues)</td>
-              <td style="color: #e74c3c; font-weight: bold;">Multi-Year Abandonment</td>
+            <tr>
+              <td>251901</td>
+              <td>76.12</td>
+              <td>78.52</td>
+              <td style="color: #e74c3c;">+2.40</td>
+              <td>Worsening</td>
+            </tr>
+            <tr>
+              <td>251000</td>
+              <td>75.43</td>
+              <td>77.96</td>
+              <td style="color: #e74c3c;">+2.53</td>
+              <td>Worsening</td>
+            </tr>
+            <tr>
+              <td>251200</td>
+              <td>74.89</td>
+              <td>77.92</td>
+              <td style="color: #e74c3c;">+3.03</td>
+              <td>Worsening</td>
             </tr>
           </tbody>
         </table>
-
-        <h3>High-Frequency Problem Zones</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Geographic Area</th>
-              <th>Issue Types</th>
-              <th>Context</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="background: #f8d7da;">
-              <td><strong>Fulton Avenue Corridor</strong></td>
-              <td>Chronic blight, abandoned vehicles, code violations</td>
-              <td>Concentrated deterioration zone</td>
-            </tr>
-            <tr style="background: #f8d7da;">
-              <td><strong>Downtown/Waterfront</strong></td>
-              <td>Encampments, Georgia St, Mare Island approaches</td>
-              <td>Central city core</td>
-            </tr>
-            <tr>
-              <td><strong>Railroad Rights-of-Way</strong></td>
-              <td>Encampments, jurisdictional confusion</td>
-              <td>City vs. GWRR federal jurisdiction</td>
-            </tr>
-            <tr>
-              <td><strong>Highway Overpasses</strong></td>
-              <td>I-80, Highway 37 encampments</td>
-              <td>CalTrans coordination required</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div class="insight-box">
-          <h3>🎯 Cross-Reference Opportunity: Triple Burden Analysis</h3>
-          <p><strong>SeeClickFix concentration zones should be mapped against CalEnviroScreen burden tracts and crime grades to identify "triple burden" areas experiencing:</strong></p>
-          <p style="margin-top: 1rem;">(1) High pollution burden (CalEnviroScreen top percentiles) + (2) High community livability complaints (SeeClickFix density) + (3) High crime incidents (Grade F zones)</p>
-          <p style="margin-top: 1rem;"><strong>Hypothesis:</strong> Census tracts 250701, 250900, and 251802 likely show elevated density across all three metrics, requiring priority Prop 64 intervention combining environmental remediation, crime prevention, and youth programming.</p>
-        </div>
-
-        <div class="alert alert-warning">
-          <h3>Youth Development Context</h3>
-          <p><strong>The 16x increase in community livability complaints creates higher-risk developmental contexts for youth:</strong> Normalized exposure to visible disorder affects risk perception and social norms. Blocked sidewalks and unsafe public spaces limit physical activity. Visible government non-response (99.5% open rate) may erode civic trust and engagement. Environmental hazards create direct health risks during critical developmental years.</p>
-          <p style="margin-top: 1rem;"><strong>Prop 64 Programming Implication:</strong> Youth prevention must address not just substance use education, but also the deteriorating environmental conditions. Geographic concentration of issues validates targeted intervention approach in specific census tract corridors.</p>
-        </div>
+        <p class="source-citation">Source: CalEnviroScreen 3.0 & 4.0, OEHHA</p>
       </div>
 
       <div class="section-card">
-        <h2>Mortality Trends (2018-2022)</h2>
+        <h2>Municipal System Collapse</h2>
         
-        <h3>Overall Mortality Patterns</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Year</th>
-              <th>Male Rate per 100k</th>
-              <th>Female Rate per 100k</th>
-              <th>Male:Female Ratio</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2018</td>
-              <td>~875</td>
-              <td>~635</td>
-              <td>1.38:1</td>
-            </tr>
-            <tr>
-              <td>2020</td>
-              <td>912.5</td>
-              <td>689.3</td>
-              <td>1.32:1 (COVID impact)</td>
-            </tr>
-            <tr style="background: #fff3cd;">
-              <td><strong>2022</strong></td>
-              <td><strong>848.9</strong></td>
-              <td><strong>560.8</strong></td>
-              <td><strong>1.51:1 (gap widening)</strong></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p><strong>Gender Mortality Gap Widening:</strong> Female mortality decreased 20.7% while male mortality only decreased 10.6%, causing male-female gap to widen from 1.34:1 to 1.51:1. Men now die at 1.5 times the rate of women.</p>
-
-        <h3>Cause-Specific Deaths (2018-2022 Change)</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Cause of Death</th>
-              <th>2018 Approx.</th>
-              <th>2022 Actual</th>
-              <th>% Change</th>
-              <th>Trend</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="background: #f8d7da;">
-              <td>Alzheimer's Disease</td>
-              <td>~290</td>
-              <td>~380</td>
-              <td style="color: #e74c3c; font-weight: bold;">+31%</td>
-              <td>⬆ Worsening</td>
-            </tr>
-            <tr style="background: #f8d7da;">
-              <td>Drug Overdose</td>
-              <td>~70</td>
-              <td>103</td>
-              <td style="color: #e74c3c; font-weight: bold;">+47%</td>
-              <td>⬆ Worsening</td>
-            </tr>
-            <tr style="background: #f8d7da;">
-              <td>Suicide (Total)</td>
-              <td>~65</td>
-              <td>82</td>
-              <td style="color: #e74c3c; font-weight: bold;">+26%</td>
-              <td>⬆ Worsening</td>
-            </tr>
-            <tr style="background: #d5f4e6;">
-              <td>Heart Disease</td>
-              <td>~290</td>
-              <td>~275</td>
-              <td style="color: #27ae60; font-weight: bold;">-5%</td>
-              <td>✓ Improving</td>
-            </tr>
-            <tr style="background: #d5f4e6;">
-              <td>Lung Cancer</td>
-              <td>~118</td>
-              <td>110</td>
-              <td style="color: #27ae60; font-weight: bold;">-7%</td>
-              <td>✓ Improving</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div class="alert alert-warning">
-          <strong>Diverging Trajectories:</strong> Traditional chronic diseases (heart disease, lung cancer) declining due to better prevention and treatment. However, <strong>deaths of despair</strong> (overdoses, suicide) and <strong>aging-related conditions</strong> (Alzheimer's) are surging.
-        </div>
-      </div>
-
-      <div class="section-card">
-        <h2>Community Health Indicators (2023 Baseline)</h2>
-        
-        <h3>Sexually Transmitted Infections</h3>
-        <div class="stat-highlight" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
-          <div>Vallejo STD rate</div>
-          <div class="big-number">1,021</div>
-          <div>per 100,000 - HIGHEST in Solano County</div>
-        </div>
-
         <div class="kpi-grid">
           <div class="kpi-card danger">
-            <div class="label">Vallejo STD Rate</div>
-            <div class="value">1,021 per 100k</div>
-            <div class="context">Highest in Solano County</div>
+            <div class="label">Issues Reported</div>
+            <div class="value">1,477</div>
+            <div class="context">2018-2024 total</div>
+            <div class="trend increase">16.4x increase</div>
           </div>
           
           <div class="kpi-card danger">
-            <div class="label">vs. Neighboring Cities</div>
-            <div class="value">3.2x higher</div>
-            <div class="context">Significant disparity</div>
+            <div class="label">Resolution Rate</div>
+            <div class="value">0.5%</div>
+            <div class="context">8 of 1,477 resolved</div>
+            <div class="trend increase">System failure</div>
           </div>
           
-          <div class="kpi-card warning">
-            <div class="label">Respiratory Disease</div>
-            <div class="value">12,921 cases</div>
-            <div class="context">2023 documented</div>
+          <div class="kpi-card danger">
+            <div class="label">Average Wait</div>
+            <div class="value">783 days</div>
+            <div class="context">2.1 years</div>
+            <div class="trend increase">No capacity</div>
           </div>
+          
+          <div class="kpi-card danger">
+            <div class="label">Encampments</div>
+            <div class="value">741</div>
+            <div class="context">50% of all issues</div>
+            <div class="trend increase">Dominant crisis</div>
+          </div>
+        </div>
+
+        <div class="alert alert-danger">
+          <strong>Community Livability Crisis:</strong> The 16.4x increase in unresolved issues (54 → 883 reports/year) with 99.5% non-resolution documents complete municipal service failure. Youth develop in deteriorating environments with normalized disorder affecting developmental outcomes.
         </div>
       </div>
 
       <div class="section-card">
-        <h2>Life Expectancy & Racial Disparities</h2>
+        <h2>Health Disparities</h2>
         
         <h3>Life Expectancy by Race/Ethnicity</h3>
         <div class="kpi-grid">
           <div class="kpi-card success">
-            <div class="label">Asian Residents</div>
+            <div class="label">Asian</div>
             <div class="value">84.2 years</div>
-            <div class="context">Highest life expectancy</div>
+            <div class="context">Highest</div>
           </div>
           
           <div class="kpi-card warning">
-            <div class="label">White Residents</div>
+            <div class="label">White</div>
             <div class="value">~80 years</div>
-            <div class="context">Reference group</div>
+            <div class="context">Reference</div>
           </div>
           
           <div class="kpi-card danger">
-            <div class="label">Black Residents</div>
+            <div class="label">Black</div>
             <div class="value">74.3 years</div>
-            <div class="context">10-year gap vs. Asian</div>
+            <div class="context">10-year gap</div>
           </div>
           
           <div class="kpi-card danger">
-            <div class="label">NHPI Residents</div>
+            <div class="label">Pacific Islander</div>
             <div class="value">72.1 years</div>
-            <div class="context">12-year gap vs. Asian</div>
+            <div class="context">12-year gap</div>
           </div>
         </div>
 
-        <h3>Persistent Racial Mortality Disparities (2018-2023)</h3>
-        <div class="alert alert-danger">
-          <h3>NO IMPROVEMENT IN 18 YEARS</h3>
-          <ul>
-            <li><strong>NHPI mortality: 1.5x higher than White mortality</strong> - unchanged throughout entire period</li>
-            <li><strong>Black mortality: 1.3x higher than White mortality</strong> - unchanged throughout entire period</li>
-            <li><strong>Life expectancy gaps have not narrowed</strong> despite overall mortality improvements</li>
-          </ul>
-          <p style="margin-top: 1rem;"><strong>Structural Inequity:</strong> The persistence of identical mortality gaps over 18 years suggests these disparities are structurally embedded in housing, employment, environmental exposure, and healthcare access patterns. Surface-level interventions have failed to close the gap.</p>
-        </div>
-
-        <h3>COVID-19 Amplified Disparities (2020-2022)</h3>
-        <div class="kpi-grid">
-          <div class="kpi-card danger">
-            <div class="label">NHPI COVID Mortality</div>
-            <div class="value">1.9x higher</div>
-            <div class="context">vs. White residents</div>
-          </div>
-          
-          <div class="kpi-card danger">
-            <div class="label">Black COVID Mortality</div>
-            <div class="value">1.4x higher</div>
-            <div class="context">vs. White residents</div>
-          </div>
-          
-          <div class="kpi-card danger">
-            <div class="label">County Life Expectancy</div>
-            <div class="value">-2.6 years</div>
-            <div class="context">Pandemic impact</div>
-          </div>
-        </div>
-
-        <p><strong>Critical Finding:</strong> COVID-19 demonstrated how health crises disproportionately impact already vulnerable populations, widening existing disparities.</p>
-      </div>
-
-      <div class="section-card">
-        <h2>18-Year Health Trends: Worsening Conditions</h2>
-        
-        <h3>Dramatic Increases in Key Health Crises</h3>
+        <h3>Crisis Acceleration (2005-2022)</h3>
         <table>
           <thead>
             <tr>
-              <th>Health Indicator</th>
+              <th>Indicator</th>
               <th>2005 Baseline</th>
-              <th>2021-2022</th>
+              <th>2021-22</th>
               <th>% Change</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="background: #f8d7da;">
-              <td><strong>Alzheimer's Deaths</strong></td>
-              <td>~150/year</td>
-              <td>~380/year</td>
-              <td style="color: #e74c3c; font-weight: bold;">+153%</td>
-            </tr>
-            <tr style="background: #f8d7da;">
-              <td><strong>Drug Overdose Deaths</strong></td>
+            <tr>
+              <td>Drug Overdose Deaths</td>
               <td>28</td>
               <td>103</td>
-              <td style="color: #e74c3c; font-weight: bold;">+268%</td>
+              <td style="color: #e74c3c;">+268%</td>
             </tr>
-            <tr style="background: #f8d7da;">
-              <td><strong>Youth Suicide Rate</strong></td>
+            <tr>
+              <td>Youth Suicide Rate</td>
               <td>3.2 per 100k</td>
               <td>7.8 per 100k</td>
-              <td style="color: #e74c3c; font-weight: bold;">+144%</td>
+              <td style="color: #e74c3c;">+144%</td>
             </tr>
-            <tr style="background: #f8d7da;">
-              <td><strong>Homicide Rate</strong></td>
-              <td>12.3 per 100k</td>
-              <td>24.1 per 100k</td>
-              <td style="color: #e74c3c; font-weight: bold;">+96%</td>
+            <tr>
+              <td>Alzheimer's Deaths</td>
+              <td>~150</td>
+              <td>~380</td>
+              <td style="color: #e74c3c;">+153%</td>
             </tr>
           </tbody>
         </table>
-
-        <div class="alert alert-danger">
-          <strong>Public Health Crisis Acceleration:</strong> During the 18-year study period, Vallejo experienced accelerating crises in multiple domains: drug overdoses (+268%), youth suicide (+144%), Alzheimer's (+153%), and homicides (+96%). These represent severe threats to community health and safety.
-        </div>
       </div>
-
-      <div class="insight-box" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);">
-        <h3>🎯 Environmental Justice & Health Implications</h3>
-        <p>
-          <strong>Environmental burden is WORSENING:</strong> All 6 highest-burden census tracts deteriorated in CalEnviroScreen rankings while rest of California improved, indicating widening environmental justice gaps without intentional intervention.
-        </p>
-        <p>
-          <strong>NEW: Cross-reference with crime grades:</strong> These high environmental burden census tracts (250701, 250900, 251802, 251901, 251000, 251200) should now be mapped against the Grade F crime zones to identify dual high-pollution + high-crime areas requiring priority Prop 64 intervention.
-        </p>
-        <p>
-          <strong>Health disparities persist unchanged:</strong> NHPI and Black communities experience 1.5x and 1.3x higher mortality rates with NO improvement over 18 years, suggesting structural inequities require systemic intervention combining environmental cleanup, crime reduction, and health access improvements.
-        </p>
-      </div>
-
     </div>
   </div>
 
-  <!-- ACTION PRIORITIES VIEW -->
-  <div id="priorities-view" class="dashboard-view">
+  <!-- CROSS-ANALYSIS VIEW -->
+  <div id="cross-analysis-view" class="dashboard-view">
     <div class="container">
       
       <div class="hero">
-        <h1>Evidence-Based Action Priorities (Enhanced)</h1>
-        <div class="subtitle">Critical Next Steps to Achieve 5/5 Baseline Quality</div>
+        <h1>Cross-Sectional Youth Risk Analysis</h1>
+        <div class="subtitle">Converging Risk Factors and Compounded Disadvantage</div>
       </div>
 
-      <div class="section-card">
-        <h2>Top 5 Evidence-Based Intervention Priorities</h2>
-        
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-year"><span class="priority-badge priority-critical">PRIORITY 1</span> Grade 9 Transition Intensive Prevention</div>
-            <div class="timeline-content">
-              <p><strong>Evidence:</strong> Substance use DOUBLES from Grade 7 (7%) to Grade 9 (13%) - pattern consistent across all years 2018-2023</p>
-              <p><strong>Actions:</strong></p>
-              <ul>
-                <li>Double workshop frequency for 8th graders</li>
-                <li>Create summer bridge programming between 8th and 9th grade</li>
-                <li>Implement intensive peer mentorship for rising 9th graders</li>
-                <li>Deploy pre/post assessments to measure knowledge and behavior change</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-year"><span class="priority-badge priority-critical">PRIORITY 2</span> Non-Traditional Student Crisis Response</div>
-            <div class="timeline-content">
-              <p><strong>Evidence:</strong> 28-35% AOD use, 32% marijuana use (2.7x Grade 11), 9% near-daily use (3x Grade 11)</p>
-              <p><strong>Actions:</strong></p>
-              <ul>
-                <li>Develop specialized intervention protocols for high-risk youth</li>
-                <li>Implement trauma-informed care approach</li>
-                <li>Provide intensive case management with wraparound services</li>
-                <li>Integrate mental health services and counseling referrals</li>
-                <li>Create safe, supportive environments for high-need students</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-year"><span class="priority-badge priority-high">PRIORITY 3</span> School Connectedness Building</div>
-            <div class="timeline-content">
-              <p><strong>Evidence:</strong> Only 33-40% feel connected to school (need >50% for protective effect) - 10-17 point gap</p>
-              <p><strong>Actions:</strong></p>
-              <ul>
-                <li>Launch student voice and leadership programs</li>
-                <li>Create meaningful participation opportunities in school decisions</li>
-                <li>Build positive adult-student relationships through mentoring</li>
-                <li>Implement peer mentoring and support networks</li>
-                <li>Strengthen school culture and belonging initiatives</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-year"><span class="priority-badge priority-high">PRIORITY 4</span> Violence Exposure & Trauma Prevention</div>
-            <div class="timeline-content">
-              <p><strong>Evidence:</strong> 39.6% bullied, 41% physically assaulted, youth suicide +144%, homicides +137%</p>
-              <p><strong>Actions:</strong></p>
-              <ul>
-                <li>Implement trauma-informed prevention programming</li>
-                <li>Deploy violence interruption strategies in high-crime areas</li>
-                <li>Provide conflict resolution skills training</li>
-                <li>Connect youth to mental health services and crisis support</li>
-                <li>Create safe spaces and positive after-school activities</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <div class="timeline-year"><span class="priority-badge priority-critical">PRIORITY 5 (ENHANCED)</span> Grade F Census Tract Geographic Targeting</div>
-            <div class="timeline-content">
-              <p><strong>NEW Evidence:</strong> Crime concentrated in Grade F census tract zones (Central, Southwest, Northwest); ALL 6 worst environmental burden tracts worsened 2015-2019</p>
-              <p><strong>Actions:</strong></p>
-              <ul>
-                <li><strong>NEW: Cross-reference crime Grade F zones with CalEnviroScreen 4.0 high-burden tracts</strong> to identify dual high-crime + high-pollution census tracts</li>
-                <li>Focus programs in confirmed Grade F zones: Central City (Beat 7), Southwest (Beats 5,6), Northwest (Beat 1)</li>
-                <li>Partner with schools serving Grade F census tract neighborhoods (South/Southwest Vallejo)</li>
-                <li>Conduct community-based outreach in highest-burden census tracts (250701, 250900, 251802, 251901, 251000, 251200)</li>
-                <li>Implement environmental cleanup and beautification in dual-burden census tracts</li>
-                <li><strong>NEW: Track outcomes by census tract zone to assess geographic program impact</strong></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="section-card">
-        <h2>Critical Data Collection Actions (Enhanced)</h2>
-        
-        <h3><span class="priority-badge priority-critical">CRITICAL</span> Immediate Actions (0-3 Months)</h3>
+      <div class="cross-section">
+        <h2>Four Pillars of Youth Crisis</h2>
         
         <div class="alert alert-danger">
-          <h3>Action 1: Implement Pre/Post Workshop Assessments</h3>
-          <p><strong>Gap:</strong> No baseline data on participant knowledge, attitudes, or behaviors. Cannot measure workshop impact without pre/post assessments.</p>
-          <p><strong>Solution:</strong> Design and implement comprehensive assessment protocol:</p>
-          <ul>
-            <li><strong>Pre-Workshop (5 minutes):</strong> Knowledge of substance harms, perceived access, past 30-day use (confidential), intentions to use</li>
-            <li><strong>Post-Workshop (Immediate):</strong> Knowledge gains, perception changes, confidence to resist peer pressure</li>
-            <li><strong>Follow-Up (30-90 days):</strong> Self-reported behavior, help-seeking actions, academic engagement</li>
-          </ul>
-          <p><strong>Timeline:</strong> Design by November 2025, pilot by December 2025, full implementation by January 2026</p>
+          <h3>Converging Crisis Domains</h3>
+          <ol>
+            <li><strong>Economic Collapse:</strong> 33% decline in youth employment (6,895 → 4,600 jobs)</li>
+            <li><strong>Mental Health Emergency:</strong> 42.7% depression rate, 68% among LGBTQ+ youth</li>
+            <li><strong>Educational Disruption:</strong> 41% chronic absenteeism, 2% EL college readiness</li>
+            <li><strong>Community Fracture:</strong> 61.6% disconnection in crisis census tracts</li>
+          </ol>
         </div>
 
-        <div class="alert alert-danger">
-          <h3>Action 2 (ENHANCED): Request Census Tract-Level Crime Data</h3>
-          <p><strong>Gap:</strong> Crime grades mapped to census tract zones but need PRECISE tract-level statistics for rigorous evaluation. Cannot definitively measure if program reduces crime in target census tracts without exact data.</p>
-          <p><strong>Solution:</strong> Submit Public Records Act (PRA) request to Vallejo Police Department for:</p>
-          <ul>
-            <li><strong>Crime incidents by census tract (2018-present)</strong> - to verify current crime grade classifications</li>
-            <li><strong>Crime trends by census tract</strong> - to establish precise baselines for each of the 29 Vallejo census tracts</li>
-            <li>Youth arrest trends by age and census tract</li>
-            <li>Cannabis-related incidents by census tract (2021-2025 update)</li>
-            <li>Gang-related incidents by census tract location</li>
-            <li>Calls for service by census tract</li>
-          </ul>
-          <p><strong>Timeline:</strong> Submit PRA request by November 2025, receive data by December 2025 - January 2026</p>
-          <p><strong>Value:</strong> Will eliminate geographic approximation and enable precise measurement of crime reduction in Grade F target census tracts vs. Grade A+ control census tracts</p>
-        </div>
-
-        <h3><span class="priority-badge priority-high">HIGH PRIORITY</span> Short-Term Actions (3-6 Months)</h3>
+        <h3>Geographic Risk Concentration</h3>
         
-        <div class="alert alert-warning">
-          <h3>Action 3: Design Participant Tracking System</h3>
-          <p><strong>Gap:</strong> No systematic tracking of participant outcomes over time. Cannot demonstrate long-term program effects.</p>
-          <p><strong>Solution:</strong> Design comprehensive tracking system including:</p>
-          <ul>
-            <li><strong>Intake Data:</strong> Demographics, <strong>residence (census tract)</strong>, risk factors, baseline assessments, referral source</li>
-            <li><strong>Participation Tracking:</strong> Attendance records, services received, milestones achieved, dosage totals</li>
-            <li><strong>Outcomes Tracking:</strong> Graduation status, employment, arrests (with consent), self-reported substance use</li>
-          </ul>
-          <p><strong>NEW: Census tract tracking enables geographic impact assessment</strong> - can compare outcomes by census tract crime grade</p>
-          <p><strong>Timeline:</strong> Design system by January 2026, implement by February 2026, collect data ongoing</p>
+        <div class="metric-highlight">
+          <div class="description">Risk factors concentrate in Grade F census tracts with</div>
+          <div class="big-number">TRIPLE BURDEN</div>
+          <div class="description">High Crime + High Environmental Burden + Service Failure</div>
         </div>
 
-        <div class="alert alert-warning">
-          <h3>Action 4 (ENHANCED): Document Environmental Baseline by Census Tract</h3>
-          <p><strong>Gap:</strong> No before photos or environmental quality assessments by census tract. Cannot demonstrate community improvements in specific Grade F zones.</p>
-          <p><strong>Solution:</strong> Conduct baseline documentation BY CENSUS TRACT:</p>
-          <ul>
-            <li><strong>Photo Documentation:</strong> Before photos of Grade F census tracts (litter, graffiti, vacant lots, community assets) - focus on dual high-crime + high-pollution tracts</li>
-            <li><strong>Community Survey by Census Tract:</strong> Perceived safety, neighborhood quality, environmental concerns, community cohesion</li>
-            <li><strong>Asset Inventory by Census Tract:</strong> Parks, businesses, services, community resources</li>
-            <li><strong>NEW: Focus on Grade F priority zones</strong> - Central City, Southwest, Northwest census tracts</li>
-          </ul>
-          <p><strong>Timeline:</strong> Complete documentation by December 2025 - January 2026</p>
-        </div>
-
-        <h3><span class="priority-badge priority-moderate">NEW</span> Additional Enhancement Action</h3>
-        
-        <div class="alert alert-info">
-          <h3>Action 5 (NEW): Map Crime Grades to CalEnviroScreen 4.0 Scores</h3>
-          <p><strong>Purpose:</strong> Identify census tracts with DUAL high-crime + high-environmental burden requiring priority intervention</p>
-          <p><strong>Method:</strong></p>
-          <ul>
-            <li>Cross-reference Grade F crime zones (Central, Southwest, Northwest) with CalEnviroScreen 4.0 census tract scores</li>
-            <li>Identify census tracts in top quartile for BOTH crime and environmental burden</li>
-            <li>Create priority targeting map showing dual-burden zones</li>
-            <li>Focus youth prevention workshops and beautification efforts in dual-burden census tracts</li>
-          </ul>
-          <p><strong>Expected Finding:</strong> Southwest census tracts (Beats 5, 6) likely to show dual high burden based on industrial activity, pollution sources, and Grade F crime classification</p>
-          <p><strong>Timeline:</strong> Complete analysis by November 2025</p>
-        </div>
-      </div>
-
-      <div class="section-card">
-        <h2>Path to 5/5 Baseline Quality (Enhanced)</h2>
-        
-        <div class="kpi-grid">
-          <div class="kpi-card success">
-            <div class="label">Current Baseline Quality</div>
-            <div class="value">⭐⭐⭐⭐☆</div>
-            <div class="context">4/5 - STRONG + census tract intelligence</div>
-          </div>
-          
-          <div class="kpi-card success">
-            <div class="label">Target Baseline Quality</div>
-            <div class="value">⭐⭐⭐⭐⭐</div>
-            <div class="context">5/5 - RIGOROUS evaluation capability</div>
-          </div>
-          
-          <div class="kpi-card warning">
-            <div class="label">Timeline to 5/5</div>
-            <div class="value">6 months</div>
-            <div class="context">With all critical actions completed</div>
-          </div>
-        </div>
-
-        <h3>What We Gain with Enhanced Baseline (5/5)</h3>
-        <ul class="checklist">
-          <li><strong>Participant-level impact measurement</strong> - demonstrate individual knowledge and behavior change</li>
-          <li><strong>NEW: Census tract-level geographic impact assessment</strong> - prove program reduces crime in Grade F target census tracts</li>
-          <li><strong>NEW: Dual-burden targeting</strong> - identify and prioritize census tracts with both high crime AND high environmental burden</li>
-          <li><strong>Longitudinal outcome tracking</strong> - document long-term trajectories (graduation, employment, avoidance of arrest)</li>
-          <li><strong>Environmental improvement documentation by census tract</strong> - show before/after community changes in specific zones</li>
-          <li><strong>Cost-benefit analysis capability</strong> - calculate return on investment with complete data</li>
-          <li><strong>Quasi-experimental evaluation design</strong> - compare Grade F tract participants to Grade A+ tract comparison groups</li>
-          <li><strong>Publication-quality findings</strong> - establish evidence base for program replication</li>
-          <li><strong>National model status</strong> - demonstrate comprehensive, data-driven, geographically-targeted youth prevention</li>
+        <p><strong>Documented overlap between:</strong></p>
+        <ul>
+          <li>Grade F crime zones (Beats 5, 6, 7 - Central/Southwest)</li>
+          <li>CalEnviroScreen 90th+ percentile tracts</li>
+          <li>61.6% youth disconnection (Tract 251600)</li>
+          <li>School locations serving highest-need populations</li>
+          <li>741 homeless encampment reports</li>
         </ul>
       </div>
 
       <div class="section-card">
-        <h2>What We Can Claim NOW vs. FUTURE (Enhanced)</h2>
+        <h2>Critical Intervention Windows</h2>
         
-        <h3 style="color: #27ae60;">✅ Defensible Claims NOW (With Enhanced 4/5 Baseline)</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Window</th>
+              <th>Age/Grade</th>
+              <th>Key Risk</th>
+              <th>Evidence</th>
+              <th>Intervention</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background: #fff3cd;">
+              <td><strong>Grade 8-9 Transition</strong></td>
+              <td>13-15 years</td>
+              <td>Substance use doubles</td>
+              <td>7% → 13% AOD use</td>
+              <td>Intensive prevention</td>
+            </tr>
+            <tr>
+              <td><strong>Gang Recruitment</strong></td>
+              <td>12-17 years</td>
+              <td>1,000 gang members</td>
+              <td>Ages 12-17 targeted</td>
+              <td>Focused deterrence</td>
+            </tr>
+            <tr style="background: #fff3cd;">
+              <td><strong>School Disconnection</strong></td>
+              <td>14-18 years</td>
+              <td>41% chronic absence</td>
+              <td>Bethel HS data</td>
+              <td>Re-engagement</td>
+            </tr>
+            <tr>
+              <td><strong>Non-Traditional Crisis</strong></td>
+              <td>16-18 years</td>
+              <td>2-3x substance use</td>
+              <td>28-35% AOD use</td>
+              <td>Trauma-informed care</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-card">
+        <h2>Protective Factors & Assets</h2>
+        
         <div class="alert alert-success">
-          <strong>Community Need Documentation:</strong>
-          <ul>
-            <li>"Vallejo's Non-Traditional students face 2.7x higher marijuana use rates than Grade 11 peers"</li>
-            <li>"Youth suicide increased 144% during baseline period (3.2 to 7.8 per 100k)"</li>
-            <li>"Grade 9 represents evidence-based critical intervention point where substance use doubles"</li>
-            <li>"All 6 highest environmental burden census tracts worsened while rest of CA improved"</li>
-            <li><strong>NEW: "ALL 10 safest neighborhoods cluster in Beat 3 (Southeast census tracts)"</strong></li>
-            <li><strong>NEW: "Crime concentrated in Grade F census tract zones (Central, Southwest, Northwest)"</strong></li>
-            <li><strong>NEW: "Homicides increasingly concentrated in Grade F southwest census tracts with gang territory overlap"</strong></li>
-          </ul>
-          
-          <strong>Program Context:</strong>
-          <ul>
-            <li>"Program launched during established crime decline (property -16%, violent improving)"</li>
-            <li>"Vallejo performs better than CA state average on substance use across all grades"</li>
-            <li><strong>NEW: "Program targets confirmed Grade F census tract zones (South Vallejo, Crest Area)"</strong></li>
-            <li><strong>NEW: "Census tract crime data now aligned with CalEnviroScreen 4.0 environmental burden framework"</strong></li>
-          </ul>
-          
-          <strong>Outputs Delivered:</strong>
-          <ul>
-            <li>"X youth employed over 2.5 years"</li>
-            <li>"Y workshops delivered to Z participants"</li>
-            <li><strong>NEW: "Program operates in California's highest-burden census tracts (Grade F crime + top 10% environmental burden)"</strong></li>
-          </ul>
+          <h3>Program Success Indicator</h3>
+          <p><strong>Club Stride workshops achieved 92.3% protective factor activation</strong> through values-based programming, demonstrating youth respond powerfully to strengths-based interventions when properly implemented.</p>
         </div>
 
-        <h3 style="color: #e74c3c;">❌ CANNOT Claim Yet (Need Precise Census Tract Data)</h3>
+        <h3>Community Assets</h3>
+        <div class="kpi-grid">
+          <div class="kpi-card success">
+            <div class="label">Digital Access</div>
+            <div class="value">92%</div>
+            <div class="context">Broadband connectivity</div>
+          </div>
+          
+          <div class="kpi-card success">
+            <div class="label">Homeownership</div>
+            <div class="value">58.9%</div>
+            <div class="context">Family stability</div>
+          </div>
+          
+          <div class="kpi-card success">
+            <div class="label">Cultural Diversity</div>
+            <div class="value">No Majority</div>
+            <div class="context">Resilience factor</div>
+          </div>
+          
+          <div class="kpi-card warning">
+            <div class="label">School Connection</div>
+            <div class="value">24-32%</div>
+            <div class="context">Below protective threshold</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h2>Cumulative Risk Assessment</h2>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Domain</th>
+              <th>Key Metric</th>
+              <th>Vallejo Status</th>
+              <th>Comparison</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Economic</strong></td>
+              <td>Youth outcomes</td>
+              <td>28.2% worse</td>
+              <td>vs. County average</td>
+            </tr>
+            <tr>
+              <td><strong>Educational</strong></td>
+              <td>Academic proficiency</td>
+              <td>20-30pp below</td>
+              <td>vs. State average</td>
+            </tr>
+            <tr>
+              <td><strong>Safety</strong></td>
+              <td>Violent crime</td>
+              <td>2.1x higher</td>
+              <td>vs. National average</td>
+            </tr>
+            <tr>
+              <td><strong>Health</strong></td>
+              <td>Substance hospitalizations</td>
+              <td>57.6% above</td>
+              <td>vs. County rate</td>
+            </tr>
+            <tr>
+              <td><strong>Social</strong></td>
+              <td>School connectedness</td>
+              <td>24-32%</td>
+              <td>Below 50% threshold</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="insight-box">
+        <h3>🎯 Cross-Sectional Implications</h3>
+        <p>
+          Youth in Vallejo face <strong>compounded disadvantage across every life domain</strong>. The concentration of risk in specific census tracts creates "toxic stress" environments where multiple adversities interact synergistically.
+        </p>
+        <p>
+          <strong>Geographic targeting essential:</strong> Grade F census tracts show convergence of crime, environmental burden, and service failure. These zones require comprehensive intervention combining environmental cleanup, crime reduction, and intensive youth services.
+        </p>
+        <p>
+          <strong>Single-issue approaches will fail:</strong> The interconnection of economic, educational, mental health, and safety challenges requires coordinated multi-system intervention. Prop 64 program must address root causes while providing immediate protective factors.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIORITIES VIEW -->
+  <div id="priorities-view" class="dashboard-view">
+    <div class="container">
+      
+      <div class="hero">
+        <h1>Evidence-Based Action Priorities</h1>
+        <div class="subtitle">Critical Steps to Achieve 5/5 Baseline Quality</div>
+      </div>
+
+      <div class="section-card">
+        <h2>Top 5 Intervention Priorities</h2>
+        
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3><span class="priority-badge priority-critical">PRIORITY 1</span> Grade 8-9 Transition Prevention</h3>
+              <p><strong>Evidence:</strong> Substance use DOUBLES from Grade 7 (6-7%) to Grade 9 (10-13%)</p>
+              <ul>
+                <li>Double workshop frequency for 8th graders</li>
+                <li>Summer bridge programming</li>
+                <li>Peer mentorship for rising 9th graders</li>
+                <li>Pre/post assessments to measure impact</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3><span class="priority-badge priority-critical">PRIORITY 2</span> Non-Traditional Student Crisis Response</h3>
+              <p><strong>Evidence:</strong> 28-35% AOD use, 9% near-daily marijuana use</p>
+              <ul>
+                <li>Specialized trauma-informed protocols</li>
+                <li>Intensive case management</li>
+                <li>Mental health integration</li>
+                <li>Wraparound family services</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3><span class="priority-badge priority-high">PRIORITY 3</span> Geographic Targeting of Grade F Zones</h3>
+              <p><strong>Evidence:</strong> Crime concentrated in Central/Southwest/Northwest census tracts</p>
+              <ul>
+                <li>Focus in confirmed Grade F zones</li>
+                <li>Cross-reference with CalEnviroScreen</li>
+                <li>Environmental beautification</li>
+                <li>Track outcomes by census tract</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3><span class="priority-badge priority-high">PRIORITY 4</span> Mental Health Crisis Response</h3>
+              <p><strong>Evidence:</strong> 42.7% depression rate, 68% among LGBTQ+ youth</p>
+              <ul>
+                <li>Expand depression screening</li>
+                <li>LGBTQ+ specialized support</li>
+                <li>Crisis intervention protocols</li>
+                <li>School-based mental health services</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h3><span class="priority-badge priority-high">PRIORITY 5</span> School Connectedness Building</h3>
+              <p><strong>Evidence:</strong> Only 24-32% connected (need >50% for protection)</p>
+              <ul>
+                <li>Student voice programs</li>
+                <li>Positive adult relationships</li>
+                <li>Peer support networks</li>
+                <li>Meaningful participation opportunities</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <h2>Critical Data Collection Actions</h2>
+        
         <div class="alert alert-danger">
-          <strong>Impact Claims Requiring More Data:</strong>
-          <ul class="crosslist">
-            <li>"Program reduced youth substance use by X%"</li>
-            <li>"Crime in Grade F target census tracts declined X% more than city average"</li>
-            <li>"Crime in Grade F target census tracts declined X% more than Grade A+ control tracts"</li>
-            <li>"Participants showed X% improvement in risk factors"</li>
-            <li>"Program contributed X% to city crime reduction"</li>
-            <li>"Workshop participants less likely to use substances than non-participants"</li>
-            <li>"Youth who completed program had X% higher graduation rates"</li>
-            <li>"Program generated $X in community benefits per $1 invested"</li>
-            <li>"Dual high-crime + high-pollution census tracts showed greater improvement than single-burden tracts"</li>
-          </ul>
-          
-          <p style="margin-top: 1rem;"><strong>Why not?</strong> Need (1) precise census tract-level crime data from Vallejo PD, (2) pre/post assessments, (3) participant tracking, and (4) comparison groups to make these claims credibly.</p>
+          <h3>🚨 IMMEDIATE: Pre/Post Assessment Implementation</h3>
+          <p><strong>Gap:</strong> No participant baseline data</p>
+          <p><strong>Solution:</strong> Design comprehensive assessment protocol</p>
+          <p><strong>Timeline:</strong> Design by December 2025, implement January 2026</p>
         </div>
 
-        <h3 style="color: #3498db;">✅ WILL BE ABLE TO CLAIM (With 5/5 Baseline)</h3>
-        <div class="alert alert-info">
-          <strong>With Enhanced Measurement System (6-18 months):</strong>
-          <ul>
-            <li>"Program participants demonstrated X% knowledge gain about substance harms"</li>
-            <li><strong>NEW: "Grade F census tracts with program activities showed X% greater crime reduction than Grade F tracts without program"</strong></li>
-            <li><strong>NEW: "Dual-burden census tracts (high crime + high pollution) receiving comprehensive intervention showed X% improvement vs. single-burden tracts"</strong></li>
-            <li>"Youth who completed ≥3 workshops showed X% lower substance use vs. comparison group"</li>
-            <li>"Participants from Grade F census tracts achieved X% higher graduation rates than Grade F tract non-participants"</li>
-            <li>"Program generated measurable improvements in school connectedness (X% increase)"</li>
-            <li>"Cost-benefit analysis shows $X saved per $1 invested in prevention"</li>
-            <li>"Rigorous evaluation establishes program as evidence-based model for census tract-targeted youth prevention"</li>
-          </ul>
+        <div class="alert alert-danger">
+          <h3>🚨 IMMEDIATE: Census Tract Crime Data Request</h3>
+          <p><strong>Gap:</strong> Need precise tract-level statistics</p>
+          <p><strong>Solution:</strong> Submit PRA request to Vallejo PD</p>
+          <p><strong>Timeline:</strong> Submit November 2025, receive by January 2026</p>
+        </div>
+
+        <div class="alert alert-warning">
+          <h3>⚠️ HIGH PRIORITY: Participant Tracking System</h3>
+          <p><strong>Gap:</strong> No longitudinal outcome tracking</p>
+          <p><strong>Solution:</strong> Design system with census tract coding</p>
+          <p><strong>Timeline:</strong> Design January 2026, implement February 2026</p>
         </div>
       </div>
 
-      <div class="insight-box" style="background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);">
-        <h3>🎯 Bottom Line: From Strong Foundation to Rigorous Geographic Evaluation</h3>
+      <div class="insight-box">
+        <h3>🎯 Path to 5/5 Baseline Quality</h3>
         <p>
-          The enhanced baseline now includes <strong>census tract crime grade classifications (A+ through F)</strong>, providing geographic precision previously unavailable. This resolves the data structure mismatch between police beat geography and census tract framework, enabling direct correlation with CalEnviroScreen 4.0.
+          <strong>Current Status:</strong> 4/5 - Strong foundation with geographic intelligence
         </p>
         <p>
-          <strong>Critical enhancement achieved:</strong> Can now identify census tracts with DUAL high-crime + high-environmental burden requiring priority intervention. Grade F zones confirmed as Prop 64 targets (South Vallejo, Crest Area). ALL 10 safest neighborhoods identified in Grade A+ southeastern census tracts, providing control group for comparison.
+          <strong>Missing Elements:</strong> Individual participant baselines and precise census tract crime data
         </p>
         <p>
-          <strong>To achieve 5/5 baseline quality:</strong> (1) Submit PRA request to Vallejo PD for precise census tract crime data (CRITICAL - eliminates geographic approximation), (2) implement pre/post workshop assessments (CRITICAL), (3) design participant tracking system with census tract coding (HIGH PRIORITY), and (4) document environmental baseline by census tract zone (HIGH PRIORITY).
+          <strong>Timeline:</strong> 6 months to achieve rigorous evaluation capability
         </p>
         <p>
-          <strong>Timeline: 6 months to rigorous census tract-level evaluation capability.</strong> With these enhancements, can demonstrate measurable impact in Grade F target census tracts, compare to Grade A+ control tracts, identify dual-burden zones, and serve as national model for geographically-targeted, data-driven youth prevention in environmental justice communities.
+          With these enhancements, the program can demonstrate measurable impact in Grade F target census tracts, compare outcomes to Grade A+ control zones, and serve as a national model for geographically-targeted, data-driven youth prevention in environmental justice communities.
         </p>
       </div>
-
     </div>
   </div>
 
   <!-- Footer -->
   <div class="footer">
-    <div><strong>Report Date:</strong> October 29, 2025 (ENHANCED) • <strong>Baseline Period:</strong> 2018-2023 (5 Years Pre-Program)</div>
-    <div><strong>Program Launch:</strong> May 2023 • <strong>Prepared For:</strong> BSCC Prop 64 Grant Program</div>
-    <div><strong>Prepared By:</strong> Javier Barrios Nunez, Executive Director, Club Stride Inc.</div>
+    <div><strong>Report Date:</strong> November 10, 2025 • <strong>Baseline Period:</strong> January 1, 2018 - December 31, 2023</div>
+    <div><strong>Program Launch:</strong> May 2023 • <strong>Grant:</strong> BSCC Proposition 64 Cohort 3, Goal 2</div>
+    <div><strong>Prepared By:</strong> Javier Barrios Nunez, Youth Program & Data Integration Manager, Club Stride Inc.</div>
     
     <div class="sources">
       <strong>Primary Data Sources:</strong><br>
-      • <strong>California Healthy Kids Survey (CHKS)</strong> 2018-19 through 2023-24 - Substance use baselines by grade<br>
-      • <strong>City-Data.com</strong> - Vallejo Crime Statistics (2007-2024) - 18-year trend analysis<br>
-      • <strong>NEW: Vallejo Comprehensive Neighborhood Crime Report</strong> (October 2025) - Census tract crime grade classifications<br>
-      • <strong>Solano County Mortality Report</strong> (2005-2022) - Health outcomes and life expectancy<br>
-      • <strong>CalEnviroScreen 3.0 & 4.0</strong> (OEHHA 2017, 2021) - Environmental burden tracking<br>
-      • <strong>DataUSA</strong> - Vallejo Demographics & Economic Indicators (2022-2025)<br>
-      • <strong>California Department of Education</strong> - SARC Reports, CAASPP, Graduation Rates (2019-2024)<br>
-      • <strong>U.S. Bureau of Labor Statistics</strong> - Local Area Unemployment Statistics<br>
-      • <strong>Solano County Demographics Report</strong> (January 2025)<br>
-      • <strong>Vallejo Police Department</strong> - Historical Staffing Data (2007-2024) + Crime Map Analysis<br>
-      • <strong>Solano County Communicable Disease Report</strong> (2023)
+      • California Healthy Kids Survey (CHKS) 2018-2024 - Substance use baselines<br>
+      • U.S. Census Bureau & American Community Survey 2020-2023 - Demographics<br>
+      • Vallejo Police Department Statistics - Crime trends<br>
+      • Gun Violence Archive 2018-2023 - Homicide verification<br>
+      • CalEnviroScreen 3.0 & 4.0 - Environmental burden<br>
+      • SeeClickFix Community Reports 2018-2024 - Municipal service data<br>
+      • California Department of Education - Academic performance<br>
+      • Solano County Health Reports - Mortality and health indicators<br>
+      • DataUSA & City-Data - Economic indicators<br>
+      • Vallejo Comprehensive Neighborhood Crime Report - Census tract classifications
     </div>
   </div>
 
